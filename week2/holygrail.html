@@ -43,6 +43,14 @@
             background: #eee;
             margin-top: 24px;
         }
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+            aside {
+                min-width: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -61,9 +69,13 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptates!</p>
             </section>
             <div class="image-section">
-                <img src="https://www.churchofjesuschrist.org/imgs/4d4f3f3e6f3f11edb1f0eeeeac1f4f4f5c3e6f3f/full/1600%2C/0/default" alt="Campinas Temple">
+                <img id="mainImage" src="https://www.churchofjesuschrist.org/imgs/4d4f3f3e6f3f11edb1f0eeeeac1f4f4f5c3e6f3f/full/1600%2C/0/default" alt="Campinas Temple">
                 <p>Campinas</p>
             </div>
+            <form id="uploadForm">
+                <label for="imageUpload">Upload your own image:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+            </form>
         </main>
         <aside>
             <!-- You can add more content here if needed -->
@@ -72,5 +84,12 @@
     <footer>
         <p>&copy; 2025 Obonyo Eric. All rights reserved.</p>
     </footer>
-</body>
-</html>
+    <script>
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('mainImage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
