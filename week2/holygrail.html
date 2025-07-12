@@ -2,71 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Holy Grail Layout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout Example</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background: #fafafa;
+            font-family: Arial, sans-serif;
         }
-        main {
-            padding: 24px 16px;
-            max-width: 900px;
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 18px 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        section {
-            margin-bottom: 32px;
+        aside {
+            flex: 1;
+            min-width: 140px;
+            background: #f3f3f3;
+            padding: 18px 12px;
         }
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #444;
-            line-height: 1.6;
-        }
-        .image-section {
-            text-align: center;
-            margin: 32px 0 24px 0;
+        main {
+            flex: 2.5;
+            padding: 24px 18px;
         }
         .image-section img {
-            max-width: 300px;
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            margin: 0 10px;
+            display: block;
+            margin: 0 auto 8px auto;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         footer {
-            background-color: #f3f3f3;
-            padding: 14px 0;
             text-align: center;
-            color: #555;
-            font-size: 0.98em;
-            border-top: 1px solid #e0e0e0;
+            padding: 12px 0;
+            background: #eee;
+            margin-top: 24px;
         }
     </style>
 </head>
 <body>
-    <main>
-        <section>
-            <h2>Main Content Heading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
-        </section>
-        <section>
-            <h2>Secondary Section Heading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis lacinia nunc.</p>
-        </section>
-        <div class="image-section">
-            <!-- Remote image -->
-            <img src="https://www.churchofjesuschrist.org/imgs/4d4f3f3e6f3f11edb1f0eeeeac1f4f4f5c3e6f3f/full/1600%2C/0/default" alt="Temple Image">
-            <!-- Local image (change filename and path as needed) -->
-            <img src="images/local-temple.jpg" alt="Local Temple Image">
-        </div>
-    </main>
+    <header>
+        <h1>A Holy Grail Layout Example</h1>
+        <p>Google | BYU Pathway</p>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quis.</p>
+        </aside>
+        <main>
+            <section>
+                <h2>Heading</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptates!</p>
+            </section>
+            <div class="image-section">
+                <img src="https://www.churchofjesuschrist.org/imgs/4d4f3f3e6f3f11edb1f0eeeeac1f4f4f5c3e6f3f/full/1600%2C/0/default" alt="Campinas Temple">
+                <p>Campinas</p>
+            </div>
+        </main>
+        <aside>
+            <!-- You can add more content here if needed -->
+        </aside>
+    </div>
     <footer>
         <p>&copy; 2025 Obonyo Eric. All rights reserved.</p>
     </footer>
 </body>
+</html>
