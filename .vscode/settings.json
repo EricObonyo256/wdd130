@@ -1,0 +1,7 @@
+{
+    "gitlens.views.repositories.showBranchComparison": "branch",
+    "gitlens.views.repositories.includeWorkingTree": true,
+    "gitlens.views.repositories.showStashes": true,
+    "gitlens.views.repositories.showIncomingActivity": true,
+    "gitlens.views.repositories.branches.layout": "list"
+}
