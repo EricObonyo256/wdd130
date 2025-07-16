@@ -6,11 +6,24 @@
   <meta name="description" content="Wild Rapids Rafting offers thrilling whitewater adventures from beginner floats to heart-pounding river rides. Book your trip today!" />
   <title>Trips | Wild Rapids Rafting</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body class="page-transition">
+
   <header>
+    <div class="logo-animated">
+      <svg width="60" height="60" viewBox="0 0 64 64" class="icon">
+        <circle cx="32" cy="32" r="30" fill="#009688">
+          <animate attributeName="r" values="28;32;28" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <path d="M16,32 C22,24 42,24 48,32 C42,40 22,40 16,32 Z" fill="#fff">
+          <animateTransform attributeName="transform" type="rotate" from="0 32 32" to="360 32 32" dur="6s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+    </div>
     <h1>Rafting Trips & Adventures</h1>
     <p>Choose your ride through nature’s pulse!</p>
+    <label for="trip-filter">Filter Trips:</label>
     <select id="trip-filter">
       <option value="all">All Trips</option>
       <option value="beginner">Beginner</option>
@@ -20,63 +33,84 @@
   </header>
 
   <main>
-    <section id="trips" class="trip-container">
-      <!-- Trip cards here -->
-      <div class="trip-card beginner">
+    <aside class="about-host fade-in">
+      <h2>🎙️ Meet Your Host</h2>
+      <p>I’m <strong>Obonyo Eric</strong>, and I’m passionate about crafting journeys worth remembering. With a love for bold design and the outdoors, I make each ride a story.</p>
+      <ul>
+        <li>📞 Dial: <a href="tel:+256781307571">+256781307571</a></li>
+        <li>📍 Nakawa, Kampala, Uganda</li>
+      </ul>
+      <section>
+        <h3>🌍 Communal Protection</h3>
+        <ul>
+          <li>Certified guides lead every trip.</li>
+          <li>We foster trust, safety, and kinship.</li>
+        </ul>
+      </section>
+      <blockquote>
+        “The river flows with grace—and so should we. Let's paddle into the extraordinary together.”
+      </blockquote>
+    </aside>
+
+    <section id="weather" class="fade-in">
+      <h2>🌤️ Weather in Jinja</h2>
+      <div class="weather-widget">
+        <p id="weather-status">Loading weather...</p>
+      </div>
+    </section>
+
+    <section id="trips" class="trip-container fade-in">
+      <article class="trip-card beginner">
         <h2>🌊 Beginner’s Splash</h2>
         <p>Calm Class I-II waters, ideal for families and first-timers.</p>
-      </div>
-
-      <div class="trip-card intermediate">
+      </article>
+      <article class="trip-card intermediate">
         <h2>⚡ Adrenaline Rush</h2>
         <p>Class III-IV waves, fast currents and heart-pounding action.</p>
-      </div>
-
-      <div class="trip-card advanced">
+      </article>
+      <article class="trip-card advanced">
         <h2>🔥 Ultimate Ride</h2>
         <p>Full-day trip on wild Class V rapids for expert paddlers only.</p>
-      </div>
+      </article>
     </section>
 
-    <section class="gallery">
-      <h2>Trip Highlights</h2>
+    <section class="gallery fade-in">
+      <h2>📸 Trip Highlights</h2>
       <div class="image-grid">
-        <img src="images/trip1.jpg" alt="Rafters on calm river" />
-        <img src="images/trip2.jpg" alt="Raft surging through rapids" />
-        <img src="images/trip3.jpg" alt="Sunset drift with paddle guide" />
+        <figure><img src="images/trip1.jpg" alt="Calm river" /><figcaption>Tranquil waters</figcaption></figure>
+        <figure><img src="images/trip2.jpg" alt="Rapids" /><figcaption>Thrilling action</figcaption></figure>
+        <figure><img src="images/trip3.jpg" alt="Sunset ride" /><figcaption>Golden drift</figcaption></figure>
       </div>
     </section>
 
-    <section class="testimonials">
-      <h2>What Adventurers Say</h2>
-      <div class="carousel">
-        <p class="testimonial active">“The guide made me feel safe every step of the way. Unforgettable!”</p>
-        <p class="testimonial">“Best bonding experience with my team. Highly recommend the group package!”</p>
-        <p class="testimonial">“Sunset trip was magical. Worth every penny!”</p>
+    <section class="testimonials fade-in">
+      <h2>💬 What Adventurers Say</h2>
+      <div class="carousel" id="testimonial-carousel">
+        <p class="testimonial active">“The guide made me feel safe every step of the way!”</p>
+        <p class="testimonial">“Team bonding at its best. Group ride rocks!”</p>
+        <p class="testimonial">“Sunset trip = pure magic. Loved it!”</p>
       </div>
     </section>
 
-    <section class="faq">
-      <h2>FAQs</h2>
-      <div class="accordion">
-        <button class="accordion-toggle">Is rafting safe?</button>
-        <div class="accordion-content">All guides are certified, and safety briefings happen before each trip.</div>
-
-        <button class="accordion-toggle">What should I bring?</button>
-        <div class="accordion-content">Quick-dry clothes, water shoes, and a thrill-seeking attitude!</div>
-      </div>
+    <section class="faq fade-in">
+      <h2>❓ FAQs</h2>
+      <details><summary>Is rafting safe?</summary><p>Our certified guides provide safety briefings and gear.</p></details>
+      <details><summary>What should I bring?</summary><p>Water shoes, sunscreen, and good vibes!</p></details>
     </section>
 
-    <section class="location">
-      <h2>Find Us</h2>
-      <iframe src="https://maps.google.com/maps?q=Jinja,%20Uganda&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+    <section class="location fade-in">
+      <h2>📍 Find Us</h2>
+      <iframe src="https://maps.google.com/maps?q=Jinja,%20Uganda&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="300" style="border:0;" allowfullscreen></iframe>
     </section>
 
-    <div class="cta">
-      <a href="contact.html" class="btn">Book Your Adventure</a>
+    <div class="cta fade-in">
+      <a href="contact.html" class="btn">🎟️ Book Your Adventure</a>
     </div>
   </main>
 
-  <script src="scripts.js"></script>
+  <footer>
+    <p>&copy; 2025 Wild Rapids Rafting. Powered by purpose & paddles – Obonyo Eric</p>
+  </footer>
 </body>
 </html>
