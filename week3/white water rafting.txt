@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wild Rapids Rafting offers thrilling whitewater adventures from beginner floats to heart-pounding river rides. Book your trip today!" />
+  <title>Trips | Wild Rapids Rafting</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Rafting Trips & Adventures</h1>
+    <p>Choose your ride through nature’s pulse!</p>
+    <select id="trip-filter">
+      <option value="all">All Trips</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+  </header>
+
+  <main>
+    <section id="trips" class="trip-container">
+      <!-- Trip cards here -->
+      <div class="trip-card beginner">
+        <h2>🌊 Beginner’s Splash</h2>
+        <p>Calm Class I-II waters, ideal for families and first-timers.</p>
+      </div>
+
+      <div class="trip-card intermediate">
+        <h2>⚡ Adrenaline Rush</h2>
+        <p>Class III-IV waves, fast currents and heart-pounding action.</p>
+      </div>
+
+      <div class="trip-card advanced">
+        <h2>🔥 Ultimate Ride</h2>
+        <p>Full-day trip on wild Class V rapids for expert paddlers only.</p>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h2>Trip Highlights</h2>
+      <div class="image-grid">
+        <img src="images/trip1.jpg" alt="Rafters on calm river" />
+        <img src="images/trip2.jpg" alt="Raft surging through rapids" />
+        <img src="images/trip3.jpg" alt="Sunset drift with paddle guide" />
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Adventurers Say</h2>
+      <div class="carousel">
+        <p class="testimonial active">“The guide made me feel safe every step of the way. Unforgettable!”</p>
+        <p class="testimonial">“Best bonding experience with my team. Highly recommend the group package!”</p>
+        <p class="testimonial">“Sunset trip was magical. Worth every penny!”</p>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>FAQs</h2>
+      <div class="accordion">
+        <button class="accordion-toggle">Is rafting safe?</button>
+        <div class="accordion-content">All guides are certified, and safety briefings happen before each trip.</div>
+
+        <button class="accordion-toggle">What should I bring?</button>
+        <div class="accordion-content">Quick-dry clothes, water shoes, and a thrill-seeking attitude!</div>
+      </div>
+    </section>
+
+    <section class="location">
+      <h2>Find Us</h2>
+      <iframe src="https://maps.google.com/maps?q=Jinja,%20Uganda&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+    </section>
+
+    <div class="cta">
+      <a href="contact.html" class="btn">Book Your Adventure</a>
+    </div>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

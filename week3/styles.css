@@ -1,0 +1,102 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #0077b6;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+select {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.trip-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.trip-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 10px;
+  padding: 15px;
+  width: 280px;
+  transition: transform 0.3s;
+}
+
+.trip-card:hover {
+  transform: scale(1.05);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.carousel {
+  padding: 20px;
+  position: relative;
+}
+
+.testimonial {
+  display: none;
+}
+
+.testimonial.active {
+  display: block;
+  font-style: italic;
+  text-align: center;
+}
+
+.accordion-toggle {
+  background: #023e8a;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.accordion-content {
+  padding: 10px;
+  background: #dff0f7;
+  display: none;
+}
+
+.cta {
+  text-align: center;
+  padding: 30px;
+}
+
+.btn {
+  background: #0096c7;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  background: #023e8a;
+}
