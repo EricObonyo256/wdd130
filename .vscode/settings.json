@@ -4,5 +4,6 @@
     "gitlens.views.repositories.showStashes": true,
     "gitlens.views.repositories.showIncomingActivity": true,
     "gitlens.views.repositories.branches.layout": "list",
-    "editor.allowVariableFontsInAccessibilityMode": true
+    "editor.allowVariableFontsInAccessibilityMode": true,
+    "editor.linkedEditing": true
 }
