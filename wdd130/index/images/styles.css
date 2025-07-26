@@ -1,0 +1,77 @@
+/*  Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define reusable variables */
+:root {
+    --primary-color: #00008B; /* darkblue */
+    --text-color: #ffffff;
+    --border-color: #cccccc;
+    --shadow-color: #808080;
+    --aside-bg: #f8f8f8;
+    --footer-border: #666666;
+}
+
+/* Navigation styles */
+nav {
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+nav a {
+    color: var(--text-color);
+    display: block;
+    padding: 20px;
+    text-decoration: none; /* Remove default underline for links */
+}
+
+/* Heading styles */
+h1 {
+    color: var(--primary-color);
+}
+
+/* Main content styles */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main img {
+    max-width: 150px; /* Ensure responsiveness */
+    height: auto;
+    border: 1px solid #000000;
+    padding: 2px;
+    box-shadow: 0 0 30px var(--shadow-color);
+    -webkit-box-shadow: 0 0 30px var(--shadow-color); /* Vendor prefix */
+    -moz-box-shadow: 0 0 30px var(--shadow-color); /* Vendor prefix */
+}
+
+/* Aside styles */
+aside {
+    width: 300px;
+    margin: 20px auto;
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    background-color: var(--aside-bg);
+    color: #333333;
+}
+
+aside img {
+    max-width: 200px; /* Ensure responsiveness */
+    height: auto;
+}
+
+/* Paragraph styles */
+p {
+    padding: 10px;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 20px;
+    border-top: 2px solid var(--footer-border);
+    text-align: center;
+}

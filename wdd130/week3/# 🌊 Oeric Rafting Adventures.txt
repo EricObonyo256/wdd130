@@ -1,0 +1,66 @@
+# 🛶 Oeric Rafting Adventures
+
+Welcome to the official website for Oeric Rafting — your ultimate guide to white-water thrills, riverside escapes, and... one unexpectedly photogenic cat. 🐈🌊
+
+---
+
+## 📁 Project Overview
+
+This site was created to showcase:
+- Rafting trip options
+- Oeric’s story and mission
+- Contact details for adventure seekers
+- A surprise page with our feline mascot
+
+---
+
+## 📂 Folder Structure
+
+
+## 🚀 What's Inside
+
+- **index.html** – Landing page introducing Oeric Rafting
+- **about-oeric.html** – The story and spirit behind Oeric
+- **trips.html** – Information on rafting packages and adventures
+- **contact.html** – Reach out for bookings or questions
+- **cat-photo.html** – A surprise appearance by our feline mascot 🐈
+
+## 🛠️ Tech Stack
+
+- HTML for structure
+- CSS for style
+- JavaScript for interactions (main.js)
+
+## 📸 Image Credits
+
+- Cat photo sourced from [Unsplash](https://unsplash.com/)
+- All other media used under free or public domain licenses
+
+## 🤝 Author Notes
+
+Built as part of a web design learning project. Feel free to improve, remix, or add your own cat. Adventure awaits!
+
+
+
+---
+
+## 💻 Technologies Used
+
+- **HTML** – Page structure
+- **CSS** – Styling and layout
+- **JavaScript** – Interactive elements
+
+---
+
+## 📸 Image Credits
+
+- Cat photo courtesy of [Unsplash](https://unsplash.com/)
+- All other images either custom-made or royalty-free
+
+---
+
+## ✍️ Author Notes
+
+Created as part of a web design learning challenge. Built with laughter, curiosity, and a few cups of river-splashed coffee.
+
+If you're browsing this repo — feel free to reuse, remix, or ride the digital rapids yourself! 🚣‍♂️🌍

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 18px 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        aside {
+            flex: 1;
+            min-width: 140px;
+            background: #f3f3f3;
+            padding: 18px 12px;
+        }
+        main {
+            flex: 2.5;
+            padding: 24px 18px;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 8px auto;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 12px 0;
+            background: #eee;
+            margin-top: 24px;
+        }
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+            aside {
+                min-width: 0;
+            }
+        }
+        .save-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #2c3e50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .save-btn:hover {
+            background: #1a232b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>A Holy Grail Layout Example</h1>
+        <p>Google | BYU Pathway</p>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quis.</p>
+        </aside>
+        <main>
+            <section>
+                <h2>Heading</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptates!</p>
+            </section>
+            <div class="image-section">
+                <img id="mainImage" src="https://www.churchofjesuschrist.org/imgs/4d4f3f3e6f3f11edb1f0eeeeac1f4f4f5c3e6f3f/full/1600%2C/0/default" alt="Campinas Temple">
+                <p>Campinas</p>
+            </div>
+            <form id="uploadForm">
+                <label for="imageUpload">Upload your own image:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+            </form>
+            <button id="saveImageBtn" class="save-btn" type="button">Save Image</button>
+        </main>
+        <aside>
+            <!-- You can add more content here if needed -->
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; 2025 Obonyo Eric. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('mainImage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('saveImageBtn').addEventListener('click', function() {
+            const img = document.getElementById('mainImage');
+            const imgSrc = img.src;
+            // Only allow saving if the image is a data URL (uploaded by user)
+            if (imgSrc.startsWith('data:image')) {
+                const a = document.createElement('a');
+                a.href = imgSrc;
+                a.download = 'my_uploaded_image.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } else {
+                alert('Please upload an image first to save.');
+            }
+        });
+    </script>
