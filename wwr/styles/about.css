@@ -1,0 +1,170 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0077cc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* Header Styles */
+header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #0077cc;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.header-grid img {
+  width: 80px;
+  height: auto;
+}
+
+.header-grid h1 {
+  font-size: 1.8rem;
+  color: #0077cc;
+}
+
+/* Navigation Styles */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav a.active {
+  color: #ff6600;
+}
+
+/* Main Content Styles */
+main {
+  padding: 2rem 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+/* History Section */
+.history-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.history-content img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Adventures Section */
+.adventures h2 {
+  margin-bottom: 1rem;
+}
+
+.adventure-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.adventure-gallery figure {
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.adventure-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.adventure-gallery figcaption {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #ddd;
+}
+
+/* Footer Styles */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: #333;
+  color: #fff;
+}
+
+footer .socials {
+  display: flex;
+  gap: 1rem;
+}
+
+footer .socials img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .history-content {
+    grid-template-columns: 1fr;
+  }
+
+  .header-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .socials {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}

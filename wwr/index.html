@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Whitewater Adventures - Home</title>
+        <link rel="stylesheet" href="css/style.css"> <!-- General Site-wide Styles -->
+        <link rel="stylesheet" href="css/index.css"> <!-- Homepage-specific Styles -->
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <img src="images/logo.png" alt="Whitewater Adventures Logo" class="logo-animated">
+                <h1>Whitewater Adventures</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="trips.html">Trips</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Thrill. Adventure. Nature.</h2>
+            <p>Join Whitewater Adventures for the ride of your life down Uganda’s most exciting rivers!</p>
+            <a href="trips.html" class="btn">Explore Our Trips</a>
+        </section>
+
+        <!-- Trip Cards Section -->
+        <section class="trip-cards">
+            <div class="trip-card">
+                <h2>Whitewater Thrill</h2>
+                <p>Adrenaline-pumping Class IV rapids for adventure seekers.</p>
+                <a href="trips.html" class="btn">Book Now</a>
+            </div>
+            <div class="trip-card">
+                <h2>Family Float</h2>
+                <p>A calm and scenic float for families and beginners.</p>
+                <a href="trips.html" class="btn">Learn More</a>
+            </div>
+            <div class="trip-card">
+                <h2>Sunset Cruise</h2>
+                <p>Relax with a scenic sunset raft along the Nile.</p>
+                <a href="trips.html" class="btn">Reserve a Spot</a>
+            </div>
+        </section>
+
+        <!-- Adventure Gallery -->
+        <section class="gallery">
+            <h2>Adventure Gallery</h2>
+            <div class="image-grid">
+                <figure>
+                    <img src="images/rafting1.jpg" alt="Rushing Rapids">
+                    <figcaption>Rushing Rapids</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/rafting2.jpg" alt="Team Rafting">
+                    <figcaption>Team Spirit</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/rafting3.jpg" alt="Scenic Views">
+                    <figcaption>Scenic River Views</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- About Snippet -->
+        <section class="about-snippet">
+            <h3>Who We Are</h3>
+            <p>Owned and operated by <strong>Eric Obonyo</strong>, our rafting company is based in <strong>Nakawa,
+                    Kampala, Uganda</strong>. We provide safe, guided rafting experiences for individuals and groups of
+                all skill levels.</p>
+        </section>
+
+        <!-- Testimonials Carousel -->
+        <section class="testimonials">
+            <h2>What Our Guests Say</h2>
+            <div class="carousel">
+                <blockquote class="testimonial active">"Absolutely thrilling experience! Guides were amazing and
+                    professional." – Alex R.</blockquote>
+                <blockquote class="testimonial">"Perfect family outing with breathtaking scenery." – Maria L.
+                </blockquote>
+                <blockquote class="testimonial">"Best rafting company in Uganda, hands down." – John K.</blockquote>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>What should I bring on my rafting trip?</summary>
+                <p>Water shoes, sunscreen, a change of clothes, and lots of energy!</p>
+            </details>
+            <details>
+                <summary>Is rafting safe for beginners?</summary>
+                <p>Yes! We have beginner-friendly trips with expert guides ensuring your safety.</p>
+            </details>
+            <details>
+                <summary>Do you provide safety gear?</summary>
+                <p>All necessary safety equipment (helmets, life jackets) is provided.</p>
+            </details>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <h3>Ready to Take the Plunge?</h3>
+            <p>Book your next adventure with Whitewater Adventures today!</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </section>
+
+        <!-- Weather Info -->
+        <section id="weather">
+            <h2>Today's River Weather</h2>
+            <p>Sunny, 27°C — perfect conditions for an adventure!</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Whitewater Adventures | Nakawa, Kampala, Uganda</p>
+        </footer>
+
+        <!-- Optional JS for Testimonials Carousel (basic logic) -->
+        <script>
+            const testimonials = document.querySelectorAll('.testimonial');
+            let current = 0;
+
+            setInterval(() => {
+                testimonials[current].classList.remove('active');
+                current = (current + 1) % testimonials.length;
+                testimonials[current].classList.add('active');
+            }, 5000);
+        </script>
+
+        <!-- Optional: Page transition -->
+        <script>
+            window.addEventListener("beforeunload", () => {
+                document.body.classList.add("page-transition");
+            });
+        </script>
+
+    </body>
+
+</html>
