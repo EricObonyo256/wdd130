@@ -1,283 +1,358 @@
-/* Reset & base styles */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
+/* =============== Reset & Base =============== */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #222;
-    line-height: 1.7;
-    padding: 0;
-    min-height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #c3e6f6, #e6f0fa);
+  color: #222;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
 }
 
-/* Container layout */
-.container {
-    max-width: 1100px;
-    margin: 32px auto;
-    padding: 24px 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+h2, h3 {
+  font-weight: 600;
+  color: #004e92;
 }
 
-/* Headings */
-h1, h2, h3 {
-    margin-bottom: 18px;
-    color: #2c3e50;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-}
-
-h1 {
-    font-size: 2.3rem;
-    margin-top: 0;
-}
-
-h2 {
-    font-size: 1.5rem;
-}
-
-h3 {
-    font-size: 1.15rem;
-}
-
-/* Paragraphs */
-p {
-    margin-bottom: 16px;
-    color: #444;
-}
-
-/* Links */
-a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-a:hover, a:focus {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Buttons */
-.button,
-button,
-input[type="submit"] {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 22px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: background 0.3s;
-    text-decoration: none;
-}
-
-.button:hover,
-button:hover,
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Forms */
-form {
-    margin-top: 18px;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0 18px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    background: #fafafa;
-    transition: border 0.2s;
-}
-
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus,
-form textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-form textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-
-/* Lists */
-ul, ol {
-    margin: 18px 0 18px 24px;
-    padding-left: 18px;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto 16px auto;
-}
-
-/* Header & Footer */
-header {
-    background: #2c3e50;
-    color: #fff;
-    padding: 24px 0 16px 0;
-    text-align: center;
-    border-radius: 0 0 10px 10px;
-    margin-bottom: 24px;
-}
-
-footer {
-    background: #eee;
-    color: #555;
-    text-align: center;
-    padding: 16px 0;
-    margin-top: 32px;
-    border-radius: 10px 10px 0 0;
-    font-size: 1rem;
-}
-
-/* Responsive layout */
-@media (max-width: 900px) {
-    .container {
-        max-width: 98vw;
-        padding: 14px 6vw;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 8px 2vw;
-    }
-    h1 {
-        font-size: 1.4rem;
-    }
-    header, footer {
-        padding: 10px;
-    }
-}
-
-/* -------------------------------- */
-/* Home page grid layout */
-.home-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 24px;
-}
-
-.home-grid > div {
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  text-align: center;
-}
-
-.home-grid img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 12px;
-}
-
-.home-grid h3 {
-  margin-bottom: 8px;
-  color: #2c3e50;
-}
-
-.home-grid p {
-  color: #555;
+/* =============== Filter Input =============== */
+#tripFilter {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 1rem;
   font-size: 1rem;
-  line-height: 1.5;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
 }
 
-/* Trips page grid layout */
+#tripFilter:focus {
+  border-color: #0076d1;
+  outline: none;
+  box-shadow: 0 0 6px #0076d1aa;
+}
+
+/* =============== Trips Grid =============== */
 .trips-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  margin-top: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
 }
 
 .trip-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
+}
+
+.trip-card:hover,
+.trip-card:focus {
+  outline: none;
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 78, 146, 0.3);
 }
 
 .trip-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  border-bottom: 4px solid #004e92;
+  transition: transform 0.3s ease;
 }
 
-.trip-card-content {
-  padding: 16px;
+.trip-card:hover img,
+.trip-card:focus img {
+  transform: scale(1.05);
+}
+
+.trip-card h3 {
+  margin: 1rem;
+  font-size: 1.25rem;
+  color: #002f5b;
+}
+
+.trip-card p {
+  margin: 0 1rem 1.5rem;
   flex-grow: 1;
+  color: #555;
+  font-size: 1rem;
 }
 
-.trip-card-content h3 {
-  margin-bottom: 8px;
-  color: #2c3e50;
+/* =============== Pricing Table =============== */
+.pricing-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
 }
 
-.trip-card-content p {
-  color: #444;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.trip-card-content .button {
-  margin-top: auto;
-  align-self: flex-start;
-}
-
-/* Trip summary table styles */
-.trip-summary th,
-.trip-summary td {
-  border: 1px solid #ccc;
-  padding: 12px 16px;
+.pricing-table thead {
+  background: #004e92;
+  color: white;
   text-align: left;
 }
 
-.trip-summary thead {
-  background-color: #007bff;
-  color: white;
+.pricing-table th, .pricing-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #ddd;
 }
 
-.trip-summary tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+.pricing-table tbody tr:hover {
+  background-color: #e0f0ff;
+  transition: background-color 0.3s ease;
+}
+
+/* =============== Image Gallery =============== */
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 900px;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+}
+
+.image-gallery img {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.image-gallery img:hover,
+.image-gallery img:focus {
+  outline: none;
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 78, 146, 0.35);
+}
+
+/* =============== CTA Section =============== */
+.cta {
+  text-align: center;
+  background: linear-gradient(90deg, #004e92, #0076d1);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  max-width: 700px;
+  box-shadow: 0 10px 40px rgba(0, 118, 209, 0.5);
+  animation: fadeInUp 1s ease forwards;
+  margin-bottom: 4rem;
+}
+
+.cta h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+.btn {
+  background: #ff5c00;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.15rem;
+  box-shadow: 0 6px 15px rgba(255, 92, 0, 0.6);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #ff7f2a;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 127, 42, 0.8);
+  outline: none;
+}
+
+/* Sticky pulsating Book Now button on desktop */
+@media (min-width: 768px) {
+  #stickyBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(255, 92, 0, 0.7);
+    animation: pulse 2.5s infinite ease-in-out;
+  }
+}
+
+/* =============== Animations =============== */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 92, 0, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 92, 0, 1);
+    transform: scale(1.07);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============== Booking Form Styles =============== */
+.booking-form-container {
+  background: white;
+  max-width: 700px;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 4rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.booking-form-container h2 {
+  margin-bottom: 1.5rem;
+  color: #004e92;
+  font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #004e92;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: #0076d1;
+  outline: none;
+  box-shadow: 0 0 8px #0076d1aa;
+}
+
+.booking-form textarea {
+  grid-column: span 2;
+  min-height: 100px;
+}
+
+.booking-form button {
+  grid-column: span 2;
+  background: #ff5c00;
+  color: white;
+  font-weight: 700;
+  padding: 1rem 0;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 15px rgba(255, 92, 0, 0.6);
+}
+
+.booking-form button:hover,
+.booking-form button:focus {
+  background: #ff7f2a;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 127, 42, 0.8);
+  outline: none;
+}
+
+/* Responsive Booking Form */
+@media (max-width: 640px) {
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-form textarea {
+    grid-column: span 1;
+  }
+}
+
+/* =============== Responsive tweaks =============== */
+@media (max-width: 480px) {
+  .cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .trip-card img {
+    height: 140px;
+  }
+
+  .image-gallery img {
+    width: 48%;
+    height: 120px;
+  }
 }

@@ -1,180 +1,316 @@
-/* Import fonts */
+/* index.css */
+
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Playfair+Display:ital@1&display=swap');
 
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
   background: #f7fdfd;
   color: #333;
+  line-height: 1.6;
   transition: opacity 1s ease-in;
   opacity: 1;
+  scroll-behavior: smooth;
 }
 
-/* Page transition effect */
+/* Page fade-out transition (if used) */
 body.page-transition {
   opacity: 0;
 }
 
+/* Link styles */
+a {
+  color: #009688;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+a:hover,
+a:focus {
+  color: #00796b;
+  outline: none;
+}
+
 /* Header */
 header {
-  text-align: center;
-  padding: 2rem 1rem;
   background: linear-gradient(to right, #00bcd4, #009688);
   color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 5px 15px rgba(0, 150, 136, 0.4);
+  user-select: none;
 }
-
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+header p {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 0;
+  font-weight: 400;
 }
 
-select {
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-}
-
-/* Animated SVG */
-.logo-animated {
-  margin-bottom: 1rem;
-}
-
-.icon {
-  display: inline-block;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: #009688;
-  color: white;
-  padding: 0.8rem 1.6rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #00796b;
-}
-
-/* Cards */
-.trip-card {
-  background: #e0f2f1;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.trip-card:hover {
-  transform: scale(1.03);
-}
-
-/* Image gallery */
-.image-grid {
+/* Main layout grid */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 1rem;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
 }
 
-.image-grid figure {
-  position: relative;
-  margin: 0;
-  border-radius: 10px;
-  overflow: hidden;
+/* Sections styling */
+section {
+  background: #e0f2f1;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  animation-fill-mode: forwards;
 }
-
-.image-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.4s ease;
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
-
-.image-grid figure:hover img {
-  transform: scale(1.05);
-}
-
-figcaption {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  padding: 0.5rem;
-  text-align: center;
-  font-size: 0.9rem;
-  width: 100%;
+section h2,
+section h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #00796b;
 }
 
 /* About section */
-.about-host, .faq, .location, .testimonials, .cta, #weather {
-  padding: 2rem 1rem;
-  max-width: 900px;
-  margin: auto;
+#about {
+  overflow: hidden;
+}
+#about img.profile-pic {
+  float: left;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+#about p {
+  font-size: 1.1rem;
 }
 
-.about-host h2, .faq h2, .location h2, .testimonials h2, .gallery h2, #weather h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+/* Portfolio & Blog lists */
+ul.projects,
+ul.blog-posts {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0;
+}
+ul.projects li,
+ul.blog-posts li {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+ul.blog-posts li a {
+  color: #009688;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+ul.blog-posts li a:hover,
+ul.blog-posts li a:focus {
+  color: #004d40;
+  text-decoration: underline;
+  outline: none;
 }
 
-blockquote {
-  background: #f0f4c3;
-  border-left: 5px solid #cddc39;
-  padding: 1rem;
-  font-style: italic;
-}
-
-/* Carousel */
-.carousel {
-  position: relative;
-  min-height: 80px;
-}
-
-.testimonial {
+/* Booking form styles */
+#booking-form {
+  background: #009688;
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 150, 136, 0.4);
   opacity: 0;
-  position: absolute;
-  transition: opacity 0.5s ease-in-out;
+  transform: translateX(-30px);
+  animation-fill-mode: forwards;
 }
-
-.testimonial.active {
+#booking-form.visible {
   opacity: 1;
-  position: relative;
+  transform: translateX(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
-/* FAQ details */
-details {
-  margin-bottom: 1rem;
+#booking-form h3 {
+  margin-bottom: 1.2rem;
+  font-size: 1.9rem;
 }
-
-summary {
-  font-weight: bold;
+#booking-form label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+#booking-form input,
+#booking-form select,
+#booking-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  color: #004d40;
+}
+#booking-form input:focus,
+#booking-form select:focus,
+#booking-form textarea:focus {
+  outline: none;
+  background-color: #b2dfdb;
+  color: #00332f;
+}
+#booking-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+#booking-form button {
+  background-color: #004d40;
+  border: none;
+  padding: 0.85rem 2rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 12px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+#booking-form button:hover,
+#booking-form button:focus {
+  background-color: #00332f;
+  outline: none;
 }
 
-/* Fade-in animation */
-.fade-in {
+/* Aside styling */
+aside {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateX(40px);
+  animation-fill-mode: forwards;
 }
-
-.fade-in.visible {
+aside.visible {
   opacity: 1;
-  transform: translateY(0);
-  transition: all 0.7s ease-out;
+  transform: translateX(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+aside h2 {
+  color: #00796b;
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+aside img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+/* Footer styling */
 footer {
-  text-align: center;
-  padding: 1rem;
   background: #eeeeee;
+  text-align: center;
+  padding: 1rem 1rem;
   font-size: 0.9rem;
   color: #666;
+  margin-top: 3rem;
+  user-select: none;
+}
+footer a {
+  color: #009688;
+  font-weight: 600;
+  text-decoration: none;
+}
+footer a:hover,
+footer a:focus {
+  color: #004d40;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Animations for fade in */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  #about img.profile-pic {
+    float: none;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  #booking-form {
+    margin-top: 2rem;
+  }
 }

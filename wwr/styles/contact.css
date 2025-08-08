@@ -1,123 +1,224 @@
-/* ====== Global Styles ====== */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+/* Reset & base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #f5f9ff;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
   color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 
+/* Container to center content */
 .container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* ====== Header ====== */
+/* Header styles with background image and overlay */
 header {
-  background: #004c99;
-  color: #fff;
-  padding: 1rem 0;
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1500534623283-312aade485b3fb?auto=format&fit=crop&w=1350&q=80')
+    no-repeat center center/cover;
+  color: white;
+  padding: 100px 0 60px;
+  text-align: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 119, 204, 0.6);
 }
 
 header h1 {
-  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 15px;
 }
 
+/* Navigation menu */
 nav ul {
   list-style: none;
-  padding: 0;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 nav ul li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 nav ul li a:hover,
-nav ul li a[aria-current="page"] {
-  text-decoration: underline;
+nav ul li a[aria-current='page'] {
+  background-color: #003f7d;
 }
 
-/* ====== Main Content ====== */
-main h2 {
-  margin-top: 1.5rem;
-  color: #004c99;
+/* Main content container */
+main.container {
+  background: white;
+  margin: -40px auto 60px;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
 
-section {
-  margin-bottom: 2rem;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-p {
-  margin-bottom: 1rem;
+/* Contact info section */
+.contact-info {
+  flex: 1 1 300px;
+  max-width: 450px;
 }
 
-/* ====== Form Styling ====== */
-form div {
-  margin-bottom: 1rem;
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
+.contact-info p strong {
+  color: #0077cc;
+  min-width: 90px;
+  display: inline-block;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font: inherit;
+.contact-info p svg {
+  width: 22px;
+  height: 22px;
+  fill: #0077cc;
+  flex-shrink: 0;
 }
 
-input[type="submit"] {
-  background: #004c99;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background: #003366;
-}
-
-/* ====== Trips Page Styles ====== */
-.trips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.trip-card {
-  background: #e0f7fa;
-  padding: 1rem;
+/* Form styles */
+form {
+  flex: 1 1 300px;
+  max-width: 500px;
+  background-color: #f9fbff;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 119, 204, 0.15);
 }
 
-.trip-card h3 {
-  margin-top: 0;
-  color: #004c99;
+form div {
+  margin-bottom: 20px;
 }
 
-/* ====== Footer ====== */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+form input[type='text'],
+form input[type='email'],
+form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+form input[type='text']:focus,
+form input[type='email']:focus,
+form textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+  background-color: #eef6ff;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form input[type='submit'] {
+  width: 100%;
+  background-color: #0077cc;
+  border: none;
+  color: white;
+  padding: 14px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+form input[type='submit']:hover {
+  background-color: #005fa3;
+}
+
+/* Footer */
 footer {
-  background: #004c99;
-  color: #fff;
   text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
+  padding: 25px 0;
   font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
+  margin-top: auto;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  main.container {
+    flex-direction: column;
+    padding: 40px 20px;
+    margin: -20px auto 40px;
+  }
+
+  .contact-info,
+  form {
+    max-width: 100%;
+    flex: none;
+  }
+}
+
+/* Utility: visually hidden for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

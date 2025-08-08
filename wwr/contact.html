@@ -2,20 +2,246 @@
 <html lang="en-US">
 
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-          content="Contact Whitewater Adventures in Nakawa, Kampala, Uganda. Get in touch for bookings, inquiries, and more.">
-    <meta name="author" content="Whitewater Adventures">
+          content="Contact Whitewater Adventures in Nakawa, Kampala, Uganda. Get in touch for bookings, inquiries, and more." />
+    <meta name="author" content="Whitewater Adventures" />
     <title>Contact Us - Whitewater Adventures</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      /* Base reset */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Body and fonts */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f4f8;
+        color: #333;
+        line-height: 1.6;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header with new background image & overlay */
+      header {
+        position: relative;
+        background: url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        color: white;
+        padding: 100px 0 60px;
+        text-align: center;
+        box-shadow: inset 0 0 0 1000px rgba(0, 119, 204, 0.6);
+        /* Blue overlay */
+      }
+
+      header h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        margin-bottom: 15px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        transition: background-color 0.35s ease, color 0.35s ease;
+      }
+
+      nav ul li a:hover,
+      nav ul li a[aria-current='page'] {
+        background-color: #003f7d;
+      }
+
+      /* Main content styles */
+      main.container {
+        background: white;
+        margin: -40px auto 60px;
+        border-radius: 12px;
+        padding: 40px 30px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+
+        /* Animation */
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease forwards;
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Contact info styling */
+      .contact-info {
+        flex: 1 1 300px;
+        max-width: 450px;
+      }
+
+      .contact-info p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .contact-info p strong {
+        color: #0077cc;
+        min-width: 90px;
+        display: inline-block;
+      }
+
+      .contact-info p svg {
+        width: 22px;
+        height: 22px;
+        fill: #0077cc;
+        flex-shrink: 0;
+      }
+
+      /* Form styling */
+      form {
+        flex: 1 1 300px;
+        max-width: 500px;
+        background-color: #f9fbff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 119, 204, 0.15);
+      }
+
+      form div {
+        margin-bottom: 20px;
+      }
+
+      form label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      form input[type='text'],
+      form input[type='email'],
+      form textarea {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: 1.5px solid #ccc;
+        transition: border-color 0.3s ease;
+        font-family: inherit;
+      }
+
+      form input[type='text']:focus,
+      form input[type='email']:focus,
+      form textarea:focus {
+        border-color: #0077cc;
+        outline: none;
+        background-color: #eef6ff;
+      }
+
+      form textarea {
+        resize: vertical;
+      }
+
+      form input[type='submit'] {
+        width: 100%;
+        background-color: #0077cc;
+        border: none;
+        color: white;
+        padding: 14px;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 700;
+        letter-spacing: 1px;
+        transition: background-color 0.35s ease, color 0.35s ease;
+      }
+
+      form input[type='submit']:hover {
+        background-color: #005fa3;
+      }
+
+      /* Footer styles */
+      footer {
+        text-align: center;
+        padding: 25px 0;
+        font-size: 0.9rem;
+        color: #666;
+        border-top: 1px solid #ddd;
+        background-color: #f9f9f9;
+        margin-top: auto;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        main.container {
+          flex-direction: column;
+          padding: 40px 20px;
+          margin: -20px auto 40px;
+        }
+
+        .contact-info,
+        form {
+          max-width: 100%;
+          flex: none;
+        }
+      }
+
+      /* Utility: Visually hidden for screen readers */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
   </head>
 
   <body>
     <header>
       <div class="container">
         <h1>Whitewater Adventures</h1>
-        <nav>
+        <nav aria-label="Primary navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -27,37 +253,75 @@
     </header>
 
     <main class="container">
-      <h2>Contact Us</h2>
-
-      <section>
-        <p>We’d love to hear from you! Whether you have a question, need help booking, or just want to say hi, use the
-          form below or reach out directly.</p>
+      <!-- Contact info with icons -->
+      <section class="contact-info" aria-labelledby="contact-info-heading">
+        <p id="contact-info-heading">
+          <strong>Phone:</strong>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path
+                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.36 11.36 0 003.54.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.54 1 1 0 01-.27 1.11z" />
+          </svg>
+          <a href="tel:+256781307571" aria-label="Call phone number +256 781 307 571">+256 781 307 571</a>
+        </p>
         <p>
-          <strong>Phone:</strong> +256 781 307 571<br>
-          <strong>Email:</strong> <a href="mailto:info@whitewateradventures.ug">info@whitewateradventures.ug</a><br>
-          <strong>Location:</strong> Nakawa, Kampala, Uganda
+          <strong>Email:</strong>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path
+                  d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z" />
+          </svg>
+          <a href="mailto:info@whitewateradventures.ug" rel="noopener noreferrer">info@whitewateradventures.ug</a>
+        </p>
+        <p>
+          <strong>Location:</strong>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path
+                  d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+          </svg>
+          Nakawa, Kampala, Uganda
         </p>
       </section>
 
-      <section>
-        <form action="#" method="post">
+      <!-- Contact form -->
+      <section aria-labelledby="contact-form-heading">
+        <h3 id="contact-form-heading" class="sr-only">Send us a message</h3>
+        <form action="#" method="post" novalidate>
           <div>
             <label for="name">Your name:</label>
-            <input type="text" id="name" name="name" required>
+            <input
+                   type="text"
+                   id="name"
+                   name="name"
+                   required
+                   placeholder="Enter your full name"
+                   autocomplete="name"
+                   aria-required="true" />
           </div>
 
           <div>
             <label for="email">Your email:</label>
-            <input type="email" id="email" name="email" required>
+            <input
+                   type="email"
+                   id="email"
+                   name="email"
+                   required
+                   placeholder="Enter your email address"
+                   autocomplete="email"
+                   aria-required="true" />
           </div>
 
           <div>
             <label for="message">Your Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                      placeholder="Write your message here"
+                      aria-required="true"></textarea>
           </div>
 
           <div>
-            <input type="submit" value="Send Message">
+            <input type="submit" value="Send Message" />
           </div>
         </form>
       </section>

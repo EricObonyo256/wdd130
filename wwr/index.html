@@ -2,23 +2,528 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Whitewater Adventures - Home</title>
-        <link rel="stylesheet" href="css/style.css"> <!-- General Site-wide Styles -->
-        <link rel="stylesheet" href="css/index.css"> <!-- Homepage-specific Styles -->
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap"
+              rel="stylesheet" />
+
+        <style>
+            /* Reset */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(135deg, #71c9ce, #a7d7c5);
+                color: #222;
+                line-height: 1.6;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            a {
+                text-decoration: none;
+                color: #008080;
+                transition: color 0.3s ease;
+            }
+
+            a:hover,
+            a:focus {
+                color: #005050;
+            }
+
+            img {
+                max-width: 100%;
+                display: block;
+                border-radius: 10px;
+            }
+
+            /* Container */
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 1rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            /* Header */
+            header {
+                background: rgba(255 255 255 / 0.85);
+                box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                animation: slideDown 0.8s ease forwards;
+            }
+
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            header .logo-animated {
+                height: 50px;
+                width: 50px;
+                animation: logo-spin 4s linear infinite;
+                margin-right: 1rem;
+            }
+
+            @keyframes logo-spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            header h1 {
+                font-family: 'Pacifico', cursive;
+                font-size: 1.8rem;
+                color: #007a7a;
+                flex-grow: 1;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                gap: 1.5rem;
+            }
+
+            nav ul li a {
+                font-weight: 600;
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                background: transparent;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            nav ul li a:hover,
+            nav ul li a:focus {
+                background-color: #007a7a;
+                color: #fff;
+                outline: none;
+            }
+
+            /* Hero Section */
+            .hero {
+                background: url('images/hero-river.jpg') center center/cover no-repeat fixed;
+                color: white;
+                text-align: center;
+                padding: 6rem 1rem 5rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 122, 122, 0.65);
+                z-index: 0;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                position: relative;
+                z-index: 1;
+                text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+                animation: fadeInUp 1s ease forwards;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+                margin-bottom: 2rem;
+                position: relative;
+                z-index: 1;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+                animation: fadeInUp 1.5s ease forwards;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 0.85rem 2rem;
+                background-color: #00bfa5;
+                color: white;
+                font-weight: 600;
+                border-radius: 50px;
+                box-shadow: 0 4px 15px rgba(0, 191, 165, 0.4);
+                transition: background-color 0.3s ease, box-shadow 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                animation: fadeInUp 2s ease forwards;
+            }
+
+            .btn:hover,
+            .btn:focus {
+                background-color: #008c7a;
+                box-shadow: 0 6px 20px rgba(0, 140, 122, 0.6);
+                outline: none;
+            }
+
+            /* Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Trip Cards */
+            .trip-cards {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                padding: 3rem 1rem 4rem;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .trip-card {
+                background: white;
+                border-radius: 16px;
+                box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+                flex: 1 1 280px;
+                max-width: 350px;
+                padding: 2rem;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .trip-card:hover,
+            .trip-card:focus-within {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgb(0 0 0 / 0.2);
+            }
+
+            .trip-card h2 {
+                color: #007a7a;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                font-size: 1.6rem;
+            }
+
+            .trip-card p {
+                margin-bottom: 1.5rem;
+                color: #444;
+                font-size: 1rem;
+                min-height: 60px;
+            }
+
+            /* Gallery */
+            .gallery {
+                background: #e0f2f1;
+                padding: 4rem 1rem;
+                text-align: center;
+            }
+
+            .gallery h2 {
+                color: #004d40;
+                font-weight: 700;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                letter-spacing: 1.2px;
+            }
+
+            .image-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            figure {
+                position: relative;
+                overflow: hidden;
+                border-radius: 12px;
+                cursor: pointer;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                background: white;
+            }
+
+            figure:hover,
+            figure:focus-within {
+                transform: scale(1.05);
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+                outline: none;
+            }
+
+            figcaption {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+                color: #fff;
+                font-weight: 600;
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+                text-align: left;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+
+            /* About Snippet */
+            .about-snippet {
+                max-width: 900px;
+                margin: 3rem auto 4rem;
+                padding: 1rem 2rem;
+                background: white;
+                box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+                border-radius: 16px;
+                text-align: center;
+                font-size: 1.15rem;
+                color: #333;
+                line-height: 1.7;
+            }
+
+            .about-snippet strong {
+                color: #007a7a;
+            }
+
+            /* Testimonials */
+            .testimonials {
+                background: #007a7a;
+                color: white;
+                padding: 4rem 1rem;
+                text-align: center;
+            }
+
+            .testimonials h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                letter-spacing: 1.1px;
+                font-weight: 700;
+            }
+
+            .carousel {
+                max-width: 700px;
+                margin: 0 auto;
+                position: relative;
+                min-height: 100px;
+            }
+
+            .testimonial {
+                opacity: 0;
+                position: absolute;
+                width: 100%;
+                transition: opacity 1s ease;
+                font-style: italic;
+                font-size: 1.2rem;
+                line-height: 1.5;
+            }
+
+            .testimonial.active {
+                opacity: 1;
+                position: relative;
+            }
+
+            /* FAQ */
+            .faq {
+                max-width: 800px;
+                margin: 4rem auto;
+                padding: 0 1rem;
+            }
+
+            .faq h2 {
+                text-align: center;
+                color: #007a7a;
+                margin-bottom: 2rem;
+                font-weight: 700;
+                font-size: 2rem;
+            }
+
+            details {
+                background: white;
+                border-radius: 12px;
+                margin-bottom: 1rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 1rem 1.5rem;
+                cursor: pointer;
+                transition: box-shadow 0.3s ease;
+            }
+
+            details[open] {
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+            summary {
+                font-weight: 600;
+                font-size: 1.1rem;
+                list-style: none;
+                outline: none;
+            }
+
+            summary::-webkit-details-marker {
+                display: none;
+            }
+
+            details[open] summary::after {
+                content: "▲";
+                float: right;
+                font-size: 1rem;
+            }
+
+            summary::after {
+                content: "▼";
+                float: right;
+                font-size: 1rem;
+            }
+
+            details p {
+                margin-top: 0.5rem;
+                font-size: 1rem;
+                color: #444;
+            }
+
+            /* Call to Action */
+            .cta {
+                background: #004d40;
+                color: white;
+                padding: 4rem 1rem;
+                text-align: center;
+                border-radius: 0 0 40px 40px;
+                margin-top: 4rem;
+            }
+
+            .cta h3 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                font-weight: 700;
+                letter-spacing: 1.1px;
+            }
+
+            .cta p {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+                font-weight: 500;
+            }
+
+            .cta .btn {
+                background-color: #00bfa5;
+                padding: 1rem 3rem;
+                font-size: 1.1rem;
+                box-shadow: 0 6px 20px rgba(0, 191, 165, 0.5);
+                border-radius: 50px;
+            }
+
+            .cta .btn:hover,
+            .cta .btn:focus {
+                background-color: #008c7a;
+            }
+
+            /* Weather Section */
+            #weather {
+                background: #a7d7c5;
+                padding: 2.5rem 1rem;
+                text-align: center;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 16px;
+                margin: 4rem auto 2rem;
+                max-width: 400px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                color: #004d40;
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 1rem 1rem 2rem;
+                font-size: 0.9rem;
+                background: #007a7a;
+                color: #e0f2f1;
+                margin-top: auto;
+                box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2);
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .trip-cards {
+                    flex-direction: column;
+                    gap: 2rem;
+                }
+
+                nav ul {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                nav ul li {
+                    margin-bottom: 0.5rem;
+                }
+
+                header .container {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.75rem;
+                }
+
+                header h1 {
+                    font-size: 1.5rem;
+                }
+
+                .hero h2 {
+                    font-size: 2rem;
+                }
+            }
+
+            /* Page transition */
+            body.page-transition {
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+        </style>
     </head>
 
     <body>
 
         <!-- Header -->
         <header>
-            <div class="container">
-                <img src="images/logo.png" alt="Whitewater Adventures Logo" class="logo-animated">
+            <div class="container" role="banner">
+                <img src="images/logo.png" alt="Whitewater Adventures Logo" class="logo-animated" />
                 <h1>Whitewater Adventures</h1>
-                <nav>
+                <nav role="navigation" aria-label="Primary navigation">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html" aria-current="page">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="trips.html">Trips</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
@@ -28,25 +533,25 @@
         </header>
 
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" role="region" aria-label="Hero banner">
             <h2>Thrill. Adventure. Nature.</h2>
             <p>Join Whitewater Adventures for the ride of your life down Uganda’s most exciting rivers!</p>
-            <a href="trips.html" class="btn">Explore Our Trips</a>
+            <a href="trips.html" class="btn" role="button">Explore Our Trips</a>
         </section>
 
         <!-- Trip Cards Section -->
-        <section class="trip-cards">
-            <div class="trip-card">
+        <section class="trip-cards" role="region" aria-label="Featured Trips">
+            <div class="trip-card" tabindex="0">
                 <h2>Whitewater Thrill</h2>
                 <p>Adrenaline-pumping Class IV rapids for adventure seekers.</p>
                 <a href="trips.html" class="btn">Book Now</a>
             </div>
-            <div class="trip-card">
+            <div class="trip-card" tabindex="0">
                 <h2>Family Float</h2>
                 <p>A calm and scenic float for families and beginners.</p>
                 <a href="trips.html" class="btn">Learn More</a>
             </div>
-            <div class="trip-card">
+            <div class="trip-card" tabindex="0">
                 <h2>Sunset Cruise</h2>
                 <p>Relax with a scenic sunset raft along the Nile.</p>
                 <a href="trips.html" class="btn">Reserve a Spot</a>
@@ -54,98 +559,41 @@
         </section>
 
         <!-- Adventure Gallery -->
-        <section class="gallery">
+        <section class="gallery" role="region" aria-label="Adventure Gallery">
             <h2>Adventure Gallery</h2>
             <div class="image-grid">
-                <figure>
-                    <img src="images/rafting1.jpg" alt="Rushing Rapids">
+                <figure tabindex="0">
+                    <img src="images/rafting1.jpg" alt="Rushing Rapids" loading="lazy" />
                     <figcaption>Rushing Rapids</figcaption>
                 </figure>
-                <figure>
-                    <img src="images/rafting2.jpg" alt="Team Rafting">
+                <figure tabindex="0">
+                    <img src="images/rafting2.jpg" alt="Team Rafting" loading="lazy" />
                     <figcaption>Team Spirit</figcaption>
                 </figure>
-                <figure>
-                    <img src="images/rafting3.jpg" alt="Scenic Views">
+                <figure tabindex="0">
+                    <img src="images/rafting3.jpg" alt="Scenic Views" loading="lazy" />
                     <figcaption>Scenic River Views</figcaption>
                 </figure>
             </div>
         </section>
 
         <!-- About Snippet -->
-        <section class="about-snippet">
+        <section class="about-snippet" role="region" aria-label="About Whitewater Adventures">
             <h3>Who We Are</h3>
-            <p>Owned and operated by <strong>Eric Obonyo</strong>, our rafting company is based in <strong>Nakawa,
+            <p>
+                Owned and operated by <strong>Eric Obonyo</strong>, our rafting company is based in <strong>Nakawa,
                     Kampala, Uganda</strong>. We provide safe, guided rafting experiences for individuals and groups of
-                all skill levels.</p>
+                all
+                skill levels.
+            </p>
         </section>
 
         <!-- Testimonials Carousel -->
-        <section class="testimonials">
+        <section class="testimonials" role="region" aria-label="Guest Testimonials">
             <h2>What Our Guests Say</h2>
             <div class="carousel">
-                <blockquote class="testimonial active">"Absolutely thrilling experience! Guides were amazing and
-                    professional." – Alex R.</blockquote>
-                <blockquote class="testimonial">"Perfect family outing with breathtaking scenery." – Maria L.
+                <blockquote class="testimonial active" tabindex="0">
+                    "Absolutely thrilling experience! Guides were amazing and professional." – Alex R.
                 </blockquote>
-                <blockquote class="testimonial">"Best rafting company in Uganda, hands down." – John K.</blockquote>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq">
-            <h2>Frequently Asked Questions</h2>
-            <details>
-                <summary>What should I bring on my rafting trip?</summary>
-                <p>Water shoes, sunscreen, a change of clothes, and lots of energy!</p>
-            </details>
-            <details>
-                <summary>Is rafting safe for beginners?</summary>
-                <p>Yes! We have beginner-friendly trips with expert guides ensuring your safety.</p>
-            </details>
-            <details>
-                <summary>Do you provide safety gear?</summary>
-                <p>All necessary safety equipment (helmets, life jackets) is provided.</p>
-            </details>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta">
-            <h3>Ready to Take the Plunge?</h3>
-            <p>Book your next adventure with Whitewater Adventures today!</p>
-            <a href="contact.html" class="btn">Contact Us</a>
-        </section>
-
-        <!-- Weather Info -->
-        <section id="weather">
-            <h2>Today's River Weather</h2>
-            <p>Sunny, 27°C — perfect conditions for an adventure!</p>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2025 Whitewater Adventures | Nakawa, Kampala, Uganda</p>
-        </footer>
-
-        <!-- Optional JS for Testimonials Carousel (basic logic) -->
-        <script>
-            const testimonials = document.querySelectorAll('.testimonial');
-            let current = 0;
-
-            setInterval(() => {
-                testimonials[current].classList.remove('active');
-                current = (current + 1) % testimonials.length;
-                testimonials[current].classList.add('active');
-            }, 5000);
-        </script>
-
-        <!-- Optional: Page transition -->
-        <script>
-            window.addEventListener("beforeunload", () => {
-                document.body.classList.add("page-transition");
-            });
-        </script>
-
-    </body>
-
-</html>
+                <blockquote class="testimonial" tabindex="0">
+                    "Perfect family outing with breathtaking
