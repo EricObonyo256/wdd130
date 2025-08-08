@@ -30,6 +30,7 @@ nav ul {
   padding: 0;
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -51,6 +52,10 @@ main h2 {
 
 section {
   margin-bottom: 2rem;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 /* ====== Form Styling ====== */
@@ -85,6 +90,26 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background: #003366;
+}
+
+/* ====== Trips Page Styles ====== */
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.trip-card {
+  background: #e0f7fa;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trip-card h3 {
+  margin-top: 0;
+  color: #004c99;
 }
 
 /* ====== Footer ====== */
