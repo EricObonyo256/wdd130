@@ -1,0 +1,98 @@
+/* ====== Global Styles ====== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f9ff;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ====== Header ====== */
+header {
+  background: #004c99;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a[aria-current="page"] {
+  text-decoration: underline;
+}
+
+/* ====== Main Content ====== */
+main h2 {
+  margin-top: 1.5rem;
+  color: #004c99;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* ====== Form Styling ====== */
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font: inherit;
+}
+
+input[type="submit"] {
+  background: #004c99;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: #003366;
+}
+
+/* ====== Footer ====== */
+footer {
+  background: #004c99;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
