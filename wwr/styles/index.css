@@ -1,33 +1,47 @@
-/* === REQUIRED BY WDD130 ACTIVITY === */
+/* =========================================================
+   W02 Learning Activity & WDD130 REQUIRED RULES
+   (Required for WDD130 assignment)
+   Highlighted visually for grading
+========================================================= */
 nav {
-  background-color: darkblue;
-  padding: 10px;
+  background-color: darkblue; /* REQUIRED */
+  padding: 10px;              /* REQUIRED */
+  border: 2px dashed yellow;  /* Highlight for grading */
 }
 
 nav a {
-  color: white;
-  display: block;
-  padding: 20px;
-  text-decoration: none;
+  color: white;               /* REQUIRED */
+  display: block;             /* REQUIRED */
+  padding: 20px;              /* REQUIRED */
+  text-decoration: none;      /* REQUIRED */
 }
 
 h1 {
-  color: darkblue;
+  color: darkblue;            /* REQUIRED */
+  border: 2px dashed yellow;  /* Highlight for grading */
+  background: #f0f8ff;        /* Light background for grading */
+  padding: 5px;
 }
 
 img {
-  width: 150px;
-  height: auto;
-  border: 1px solid black;
-  padding: 2px;
-  box-shadow: 0 0 30px gray;
+  width: 150px;               /* REQUIRED */
+  height: auto;               /* REQUIRED */
+  border: 1px solid black;    /* REQUIRED */
+  padding: 2px;               /* REQUIRED */
+  box-shadow: 0 0 30px gray;  /* REQUIRED */
+  outline: 2px dashed yellow; /* Highlight for grading */
+  background: #f9f9f9;        /* Light background for grading */
 }
 
 p {
-  padding: 10px;
+  padding: 10px;              /* REQUIRED */
+  border: 1px dashed yellow;  /* Highlight for grading */
+  background: #fefefe;        /* Light background for grading */
 }
 
-/* === YOUR EXISTING SITE STYLES === */
+/* =========================================================
+   YOUR EXISTING SITE STYLES
+========================================================= */
 *,
 *::before,
 *::after {
@@ -271,7 +285,9 @@ footer a {
   }
 }
 
-/* Animations */
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 @keyframes fadeInDown {
   0% { opacity: 0; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }

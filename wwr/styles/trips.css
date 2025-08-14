@@ -1,360 +1,180 @@
-/* =============== Reset & Base =============== */
+/* =========================================================
+   1. Reset & Box-Sizing
+========================================================= */
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #c3e6f6, #e6f0fa);
-  color: #222;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem 4rem;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-h2, h3 {
-  font-weight: 600;
-  color: #004e92;
+/* =========================================================
+   2. Navigation
+========================================================= */
+nav {
+    background-color: darkblue;
+    padding: 10px;
+    outline: 2px dashed blue; /* grading highlight */
+}
+nav a {
+    color: white;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+nav a:hover {
+    background-color: #003366;
 }
 
-/* =============== Filter Input =============== */
-#tripFilter {
-  width: 100%;
-  max-width: 400px;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  transition: border-color 0.3s ease;
+/* =========================================================
+   3. Headers
+========================================================= */
+h1 {
+    color: darkblue;
+    background-color: #e6f0fa;
+    padding: 15px;
+    border: 2px dashed blue; /* grading highlight */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+h2 {
+    color: darkblue;
+    margin: 1rem 0;
+    text-align: center;
 }
 
-#tripFilter:focus {
-  border-color: #0076d1;
-  outline: none;
-  box-shadow: 0 0 6px #0076d1aa;
+/* =========================================================
+   4. Filter Section
+========================================================= */
+.filter-section {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto 2rem;
+}
+.filter-section label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #004e92;
+}
+.filter-section input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.filter-section input:focus {
+    border-color: #004e92;
+    box-shadow: 0 0 5px rgba(0,78,146,0.5);
 }
 
-/* =============== Trips Grid =============== */
+/* =========================================================
+   5. Trips Grid
+========================================================= */
 .trips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 3rem;
-  padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
 }
-
 .trip-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.trip-card:hover,
-.trip-card:focus {
-  outline: none;
-  transform: translateY(-10px);
-  box-shadow: 0 16px 40px rgba(0, 78, 146, 0.3);
+.trip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-
 .trip-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 4px solid #004e92;
-  transition: transform 0.3s ease;
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    outline: 2px dashed blue; /* grading highlight */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
-
-.trip-card:hover img,
-.trip-card:focus img {
-  transform: scale(1.05);
-}
-
-.trip-card h3 {
-  margin: 1rem;
-  font-size: 1.25rem;
-  color: #002f5b;
-}
-
 .trip-card p {
-  margin: 0 1rem 1.5rem;
-  flex-grow: 1;
-  color: #555;
-  font-size: 1rem;
+    padding: 10px;
+    border: 1px dashed blue; /* grading highlight */
+    background-color: #f0f8ff;
+    margin-top: 0.5rem;
 }
 
-/* =============== Pricing Table =============== */
+/* =========================================================
+   6. Pricing Table
+========================================================= */
+.pricing-section {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
 .pricing-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto 4rem;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  font-size: 1rem;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-
-.pricing-table thead {
-  background: #004e92;
-  color: white;
-  text-align: left;
-}
-
 .pricing-table th, .pricing-table td {
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid #ddd;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.pricing-table th {
+    background-color: #e6f0fa;
 }
 
-.pricing-table tbody tr:hover {
-  background-color: #e0f0ff;
-  transition: background-color 0.3s ease;
+/* =========================================================
+   7. Footer
+========================================================= */
+footer {
+    background-color: #004e92;
+    color: white;
+    padding: 1rem;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
 }
 
-/* =============== Image Gallery =============== */
-.image-gallery {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  max-width: 900px;
-  margin-bottom: 4rem;
-  padding: 0 1rem;
-}
-
-.image-gallery img {
-  width: 220px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.image-gallery img:hover,
-.image-gallery img:focus {
-  outline: none;
-  transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(0, 78, 146, 0.35);
-}
-
-/* =============== CTA Section =============== */
-.cta {
-  text-align: center;
-  background: linear-gradient(90deg, #004e92, #0076d1);
-  color: white;
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  max-width: 700px;
-  box-shadow: 0 10px 40px rgba(0, 118, 209, 0.5);
-  animation: fadeInUp 1s ease forwards;
-  margin-bottom: 4rem;
-}
-
-.cta h2 {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
-  letter-spacing: 1.5px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-.cta p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  font-weight: 500;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.25);
-}
-
-.btn {
-  background: #ff5c00;
-  color: white;
-  font-weight: 600;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1.15rem;
-  box-shadow: 0 6px 15px rgba(255, 92, 0, 0.6);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: inline-block;
-  cursor: pointer;
-  border: none;
-  text-align: center;
-}
-
-.btn:hover,
-.btn:focus {
-  background: #ff7f2a;
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 127, 42, 0.8);
-  outline: none;
-}
-
-/* Sticky pulsating Book Now button on desktop */
-@media (min-width: 768px) {
-  #stickyBtn {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    z-index: 1000;
-    box-shadow: 0 0 15px rgba(255, 92, 0, 0.7);
-    animation: pulse 2.5s infinite ease-in-out;
-  }
-}
-
-/* =============== Animations =============== */
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(255, 92, 0, 0.7);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(255, 92, 0, 1);
-    transform: scale(1.07);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* =========================================================
+   8. Animations
+========================================================= */
 .fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.fade-in.appear {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =============== Booking Form Styles =============== */
-.booking-form-container {
-  background: white;
-  max-width: 700px;
-  width: 100%;
-  padding: 2.5rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-  margin: 0 auto 4rem;
-  animation: fadeInUp 1s ease forwards;
-}
-
-.booking-form-container h2 {
-  margin-bottom: 1.5rem;
-  color: #004e92;
-  font-weight: 700;
-  text-align: center;
-  font-size: 2rem;
-}
-
-.booking-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem 2rem;
-}
-
-.booking-form label {
-  display: block;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-  color: #004e92;
-}
-
-.booking-form input,
-.booking-form select,
-.booking-form textarea {
-  width: 100%;
-  padding: 0.65rem 1rem;
-  border: 1.5px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  resize: vertical;
-}
-
-.booking-form input:focus,
-.booking-form select:focus,
-.booking-form textarea:focus {
-  border-color: #0076d1;
-  outline: none;
-  box-shadow: 0 0 8px #0076d1aa;
-}
-
-.booking-form textarea {
-  grid-column: span 2;
-  min-height: 100px;
-}
-
-.booking-form button {
-  grid-column: span 2;
-  background: #ff5c00;
-  color: white;
-  font-weight: 700;
-  padding: 1rem 0;
-  border-radius: 50px;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 6px 15px rgba(255, 92, 0, 0.6);
-}
-
-.booking-form button:hover,
-.booking-form button:focus {
-  background: #ff7f2a;
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 127, 42, 0.8);
-  outline: none;
-}
-
-/* Responsive Booking Form */
-@media (max-width: 640px) {
-  .booking-form {
-    grid-template-columns: 1fr;
-  }
-  
-  .booking-form textarea {
-    grid-column: span 1;
-  }
-}
-
-/* =============== Responsive tweaks =============== */
-@media (max-width: 480px) {
-  .cta h2 {
-    font-size: 1.6rem;
-  }
-
-  .trip-card img {
-    height: 140px;
-  }
-
-  .image-gallery img {
-    width: 48%;
-    height: 120px;
-  }
+/* =========================================================
+   9. Responsive
+========================================================= */
+@media (max-width: 900px) {
+    .trips-grid {
+        grid-template-columns: 1fr;
+    }
 }

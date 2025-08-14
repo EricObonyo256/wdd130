@@ -2,24 +2,34 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Trips Page - Adventure Awaits</title>
-
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="styles/trips.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/trips.css">
     </head>
 
     <body>
+        <!-- Navigation -->
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Trips</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <!-- Main Header -->
+        <header>
+            <h1>Adventure Awaits: Explore Our Trips</h1>
+        </header>
+
         <!-- Search Filter -->
-        <section style="max-width:1200px; width:100%; padding: 0 1rem; margin-bottom: 2rem;">
-            <label for="tripFilter" style="font-weight:600; font-size:1.1rem; color:#004e92;">Filter Trips:</label>
+        <section class="filter-section">
+            <label for="tripFilter">Filter Trips:</label>
             <input
                    type="text"
                    id="tripFilter"
                    placeholder="Type to filter trips..."
-                   style="width:100%; max-width:400px; padding:0.5rem 1rem; font-size:1rem; margin-top:0.5rem; border-radius:8px; border:1px solid #ccc;"
-                   aria-label="Filter trips by name or description" />
+                   aria-label="Filter trips by name or description">
         </section>
 
         <!-- Trips Grid -->
@@ -27,7 +37,7 @@
             <div class="trip-card fade-in" tabindex="0"
                  data-title="Mountain Adventure explore scenic mountain trails breathtaking views">
                 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-                     alt="Mountain Adventure Trail" />
+                     alt="Mountain Adventure Trail">
                 <h3>Mountain Adventure</h3>
                 <p>Explore the scenic mountain trails and enjoy breathtaking views.</p>
             </div>
@@ -35,111 +45,55 @@
             <div class="trip-card fade-in" tabindex="0"
                  data-title="River Rafting thrill whitewater rafting expert guides">
                 <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
-                     alt="River Rafting Rapids" />
+                     alt="River Rafting Rapids">
                 <h3>River Rafting</h3>
                 <p>Experience the thrill of whitewater rafting with our expert guides.</p>
             </div>
 
             <div class="trip-card fade-in" tabindex="0" data-title="Forest Camp relax serene forest campsite nature">
                 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
-                     alt="Forest Camp Evening" />
+                     alt="Forest Camp Evening">
                 <h3>Forest Camp</h3>
                 <p>Relax in a serene forest campsite surrounded by nature.</p>
             </div>
         </section>
 
         <!-- Pricing Table -->
-        <table class="pricing-table" aria-label="Trip Pricing Packages">
-            <thead>
-                <tr>
-                    <th scope="col">Package</th>
-                    <th scope="col">Duration</th>
-                    <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Basic Adventure</td>
-                    <td>1 Day</td>
-                    <td>$150</td>
-                </tr>
-                <tr>
-                    <td>Weekend Getaway</td>
-                    <td>3 Days</td>
-                    <td>$400</td>
-                </tr>
-                <tr>
-                    <td>Ultimate Expedition</td>
-                    <td>7 Days</td>
-                    <td>$900</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Image Gallery -->
-        <section class="image-gallery" aria-label="Adventure Image Gallery">
-            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80"
-                 alt="Sunset Mountain View" tabindex="0" class="fade-in" />
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&q=80"
-                 alt="River Rapids Closeup" tabindex="0" class="fade-in" />
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
-                 alt="Campfire Under Stars" tabindex="0" class="fade-in" />
-            <img src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=400&q=80"
-                 alt="Hiking Trail Path" tabindex="0" class="fade-in" />
+        <section class="pricing-section">
+            <h2>Trip Pricing Packages</h2>
+            <table class="pricing-table" aria-label="Trip Pricing Packages">
+                <thead>
+                    <tr>
+                        <th scope="col">Package</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Adventure</td>
+                        <td>1 Day</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td>Weekend Getaway</td>
+                        <td>3 Days</td>
+                        <td>$400</td>
+                    </tr>
+                    <tr>
+                        <td>Ultimate Expedition</td>
+                        <td>7 Days</td>
+                        <td>$900</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta" aria-label="Call to Action">
-            <h2>Ready for Your Next Adventure?</h2>
-            <p>Book your trip today and create unforgettable memories!</p>
-            <a href="#" class="btn" role="button" aria-label="Book your trip now" id="stickyBtn">Book Now</a>
-        </section>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Adventure Awaits</p>
+        </footer>
 
-        <script>
-            // Scroll fade-in animation
-            const faders = document.querySelectorAll('.fade-in');
-            const appearOptions = {
-                threshold: 0.2,
-                rootMargin: "0px 0px -50px 0px"
-            };
-            const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
-                    entry.target.classList.add('appear');
-                    observer.unobserve(entry.target);
-                });
-            }, appearOptions);
-            faders.forEach(fader => {
-                appearOnScroll.observe(fader);
-            });
-
-            // Smooth scroll for internal anchors (if any)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-
-            // Trip cards filtering
-            const filterInput = document.getElementById('tripFilter');
-            const tripCards = document.querySelectorAll('.trip-card');
-
-            filterInput.addEventListener('input', e => {
-                const query = e.target.value.toLowerCase().trim();
-                tripCards.forEach(card => {
-                    const text = card.dataset.title.toLowerCase();
-                    if (text.includes(query)) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        </script>
     </body>
 
 </html>
