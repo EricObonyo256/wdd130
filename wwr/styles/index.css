@@ -1,34 +1,46 @@
-/* ===========================
-   Reset & Base Styles
-   =========================== */
+/* === REQUIRED BY WDD130 ACTIVITY === */
+nav {
+  background-color: darkblue;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+}
+
+h1 {
+  color: darkblue;
+}
+
+img {
+  width: 150px;
+  height: auto;
+  border: 1px solid black;
+  padding: 2px;
+  box-shadow: 0 0 30px gray;
+}
+
+p {
+  padding: 10px;
+}
+
+/* === YOUR EXISTING SITE STYLES === */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #71c9ce, #a7d7c5);
-  color: #222;
+  margin: 0;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  background: #f9fafc;
+  color: #333;
   line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-a {
-  text-decoration: none;
-  color: #008080;
-  transition: color 0.3s ease;
-}
-
-a:hover,
-a:focus {
-  color: #005050;
-  outline: none;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -37,156 +49,250 @@ img {
   border-radius: 10px;
 }
 
-/* ===========================
-   Container
-   =========================== */
-.container {
-  width: 90%;
+a {
+  color: #0077cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #005999;
+}
+
+header,
+main,
+aside,
+footer {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  margin: 1rem auto;
+  padding: 0 1rem;
 }
 
-/* ===========================
-   Header
-   =========================== */
 header {
-  background: rgba(255 255 255 / 0.85);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  animation: slideDown 0.8s ease forwards;
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #eee;
+  animation: fadeInDown 1s ease forwards;
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-header .logo-animated {
-  height: 50px;
-  width: 50px;
-  animation: logo-spin 4s linear infinite;
-  margin-right: 1rem;
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+header img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: zoomIn 1.5s ease forwards;
 }
 
 header h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.8rem;
-  color: #007a7a;
-  flex-grow: 1;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav ul li a {
   font-weight: 600;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background: transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem;
+  color: #222;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-  background-color: #007a7a;
-  color: #fff;
+header h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-style: italic;
+  letter-spacing: 0.1em;
 }
 
-/* ===========================
-   Buttons
-   =========================== */
-.btn {
-  display: inline-block;
-  padding: 0.85rem 2rem;
-  background-color: #00bfa5;
-  color: white;
+header p em {
+  font-size: 1.1rem;
+  color: #0077cc;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1.5fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+main section {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+main section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+main section h3 {
   font-weight: 600;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0, 191, 165, 0.4);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  cursor: pointer;
+  margin-bottom: 1rem;
+  color: #222;
+  border-bottom: 2px solid #0077cc;
+  padding-bottom: 0.5rem;
+}
+
+main section ul {
+  list-style: inside disc;
+  color: #444;
+}
+
+main section ul li {
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+main section ul li strong {
+  color: #0077cc;
+}
+
+main section img {
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+aside {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
   text-align: center;
+  color: #555;
+  animation: fadeInRight 1s ease forwards;
 }
 
-.btn:hover,
-.btn:focus {
-  background-color: #008c7a;
-  box-shadow: 0 6px 20px rgba(0, 140, 122, 0.6);
-  outline: none;
+aside h2 {
+  margin-top: 0;
+  color: #0077cc;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-/* ===========================
-   Footer
-   =========================== */
+aside p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 footer {
   text-align: center;
-  padding: 1rem 1rem 2rem;
+  padding: 1.5rem;
+  background: #0077cc;
+  color: white;
+  border-radius: 0 0 15px 15px;
+  margin-top: 3rem;
   font-size: 0.9rem;
-  background: #007a7a;
-  color: #e0f2f1;
-  margin-top: auto;
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2);
+  user-select: none;
 }
 
-/* ===========================
-   Responsive
-   =========================== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
+footer a {
+  color: #dbefff;
+  font-weight: 600;
+}
+
+#booking-form {
+  background: #0077cc;
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 119, 204, 0.3);
+  animation: fadeInLeft 1s ease forwards;
+}
+
+#booking-form h3 {
+  color: #e0f0ff;
+  margin-bottom: 1rem;
+}
+
+#booking-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+#booking-form input,
+#booking-form select,
+#booking-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+#booking-form input:focus,
+#booking-form select:focus,
+#booking-form textarea:focus {
+  outline: none;
+  background: #e0f0ff;
+  color: #0077cc;
+}
+
+#booking-form button {
+  background: #004a99;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#booking-form button:hover {
+  background: #003366;
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
   }
 
-  nav ul li {
-    margin-bottom: 0.5rem;
-  }
-
-  header .container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+  main section,
+  aside {
+    margin-bottom: 2rem;
   }
 
   header h1 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
 }
 
-/* ===========================
-   Page transition (optional)
-   =========================== */
-body.page-transition {
-  opacity: 0;
-  transition: opacity 0.5s ease;
+/* Animations */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
 }
