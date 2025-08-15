@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Oeric Rafting Adventures - Site Plan</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                padding: 2rem;
+                background-color: #f5f5f5;
+                color: #222;
+                line-height: 1.6;
+            }
+
+            h1,
+            h2,
+            h3 {
+                margin-top: 2rem;
+            }
+
+            h1 {
+                color: #4CAF50;
+            }
+
+            .section {
+                background: #fff;
+                padding: 1.5rem;
+                margin: 1rem 0;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .color-palette {
+                display: flex;
+                gap: 1rem;
+                margin: 1rem 0;
+            }
+
+            .color-box {
+                width: 100px;
+                height: 100px;
+                border-radius: 8px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                color: #fff;
+                font-weight: bold;
+                padding: 0.5rem;
+            }
+
+            .typography-preview p,
+            .typography-preview h3 {
+                margin: 0.5rem 0;
+            }
+
+            .button-preview {
+                background-color: #4CAF50;
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border: none;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                margin-top: 1rem;
+            }
+
+            .button-preview:hover {
+                background-color: #45a049;
+            }
+
+            .grid {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                margin-top: 1rem;
+            }
+
+            .card {
+                flex: 1 1 30%;
+                height: 150px;
+                border: 2px dashed #ccc;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+                background: #e0e0e0;
+                text-align: center;
+                padding: 0.5rem;
+            }
+
+            ul {
+                padding-left: 1.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Oeric Rafting Adventures - Site Plan</h1>
+
+        <!-- Purpose Statement -->
+        <div class="section">
+            <h2>1. Purpose Statement</h2>
+            <p>The purpose of the Oeric Rafting Adventures website is to showcase adventure trips, provide clear trip
+                information, and encourage visitors to book trips online. The site highlights scenic locations, trip
+                types, pricing, and safety guidance, ensuring potential customers can make informed decisions and easily
+                contact the business.</p>
+        </div>
+
+        <!-- Target Audience -->
+        <div class="section">
+            <h2>2. Target Audience</h2>
+            <ul>
+                <li>Primary: Adventure seekers aged 18–45, interested in rafting, hiking, and camping.</li>
+                <li>Secondary: Families and groups planning weekend or multi-day getaways.</li>
+            </ul>
+            <p>Audience needs: clear trip info, images, pricing, navigation, and booking options.</p>
+        </div>
+
+        <!-- Personas -->
+        <div class="section">
+            <h2>3. Personas & Scenarios</h2>
+            <ul>
+                <li><strong>Jane, 28:</strong> Adventure traveler, wants weekend rafting trip; browses on mobile,
+                    expects fast info.</li>
+                <li><strong>Mark, 35:</strong> Teacher planning family camping; uses desktop to compare trips and book
+                    online.</li>
+            </ul>
+        </div>
+
+        <!-- Branding & Style Guide -->
+        <div class="section">
+            <h2>4. Branding & Style Guide</h2>
+
+            <h3>Logo</h3>
+            <p>Main logo in header, secondary logo for branding reinforcement.</p>
+
+            <h3>Color Palette</h3>
+            <div class="color-palette">
+                <div class="color-box" style="background-color:#71c9ce;">#71c9ce</div>
+                <div class="color-box" style="background-color:#a7d7c5;">#a7d7c5</div>
+                <div class="color-box" style="background-color:#222222;">#222222</div>
+                <div class="color-box" style="background-color:#4CAF50;">#4CAF50</div>
+            </div>
+
+            <h3>Typography</h3>
+            <div class="typography-preview">
+                <h3>Heading Example (Poppins 600)</h3>
+                <p>Body text example (Poppins 400). Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <button class="button-preview">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Site Map -->
+        <div class="section">
+            <h2>5. Site Map</h2>
+            <pre>
+Home
+│
+├─ About Us
+│
+├─ Trips
+│   ├─ Mountain Adventure
+│   ├─ River Rafting
+│   └─ Forest Camp
+│
+└─ Contact Us
+    </pre>
+        </div>
+
+        <!-- Wireframes -->
+        <div class="section">
+            <h2>6. Wireframes - Trips Page</h2>
+            <div class="grid">
+                <div class="card">Header: Logo + Navigation</div>
+                <div class="card">Page Heading: Adventure Awaits</div>
+                <div class="card">Trip Card 1</div>
+                <div class="card">Trip Card 2</div>
+                <div class="card">Trip Card 3</div>
+                <div class="card">Pricing Table</div>
+                <div class="card">CTA Section: Book Now</div>
+                <div class="card">Footer: Social Links</div>
+            </div>
+        </div>
+
+        <!-- Accessibility & UX -->
+        <div class="section">
+            <h2>7. Accessibility & UX Considerations</h2>
+            <ul>
+                <li>Use <code>aria-label</code> for navigation and sections.</li>
+                <li>Trip cards are keyboard-focusable (<code>tabindex="0"</code>).</li>
+                <li>High contrast between text and background.</li>
+                <li>Mobile-friendly responsive layout.</li>
+            </ul>
+        </div>
+
+    </body>
+
+</html>

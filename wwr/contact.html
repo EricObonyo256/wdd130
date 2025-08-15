@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-          content="Contact Whitewater Adventures in Nakawa, Kampala, Uganda. Get in touch for bookings, inquiries, and more." />
-    <meta name="author" content="Whitewater Adventures" />
     <title>Contact Us - Whitewater Adventures</title>
 
-    <!-- WDD130 required CSS -->
-    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap"
+          rel="stylesheet" />
 
-    <!-- Custom polished CSS -->
-    <link rel="stylesheet" href="styles/contact-custom.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
 
   <body>
+
+    <!-- Header -->
     <header>
-      <div class="container">
+      <div class="container" role="banner">
+        <img src="images/logo.png" alt="Whitewater Adventures Logo" class="logo-animated" />
         <h1>Whitewater Adventures</h1>
-        <nav aria-label="Primary navigation">
+        <nav role="navigation" aria-label="Primary navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -31,68 +32,76 @@
       </div>
     </header>
 
-    <main class="container">
-      <!-- Contact info with icons -->
-      <section class="contact-info" aria-labelledby="contact-info-heading">
-        <p id="contact-info-heading">
-          <strong>Phone:</strong>
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-            <path
-                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.36 11.36 0 003.54.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.54 1 1 0 01-.27 1.11z" />
-          </svg>
-          <a href="tel:+256781307571" aria-label="Call phone number +256 781 307 571">+256 781 307 571</a>
-        </p>
-        <p>
-          <strong>Email:</strong>
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-            <path
-                  d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z" />
-          </svg>
-          <a href="mailto:info@oeric_whitewateradventures.ug"
-             rel="noopener noreferrer">info@oeric_whitewateradventures.ug</a>
-        </p>
-        <p>
-          <strong>Location:</strong>
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-            <path
-                  d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
-          </svg>
-          Nakawa, Kampala, Uganda
-        </p>
-      </section>
+    <!-- Hero Section -->
+    <section class="hero" role="region" aria-label="Hero banner">
+      <h2>Get in Touch with Us</h2>
+      <p>We'd love to hear from you! Reach out for bookings, questions, or adventure tips.</p>
+    </section>
 
-      <!-- Contact form -->
-      <section aria-labelledby="contact-form-heading">
-        <h3 id="contact-form-heading" class="sr-only">Send us a message</h3>
-        <form action="#" method="post" novalidate>
-          <div>
-            <label for="name">Your name:</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your full name" autocomplete="name"
-                   aria-required="true" />
-          </div>
+    <!-- Contact Form Section -->
+    <section class="contact-form" role="region" aria-label="Contact Form">
+      <div class="container" style="max-width:900px; margin:3rem auto; padding:1rem;">
+        <h2>Contact Form</h2>
+        <form action="#" method="post" class="form">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
 
-          <div>
-            <label for="email">Your email:</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email address"
-                   autocomplete="email" aria-required="true" />
-          </div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Your email" required />
 
-          <div>
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Write your message here"
-                      aria-required="true"></textarea>
-          </div>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required />
 
-          <div>
-            <input type="submit" value="Send Message" />
-          </div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
         </form>
-      </section>
-    </main>
+      </div>
+    </section>
 
+    <!-- Contact Info & Map -->
+    <section class="contact-info" role="region" aria-label="Contact Information">
+      <div class="container"
+           style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-bottom:4rem;">
+        <div class="info-card"
+             style="flex:1 1 250px; background:white; border-radius:16px; padding:2rem; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+          <h3>Our Location</h3>
+          <p>Nakawa, Kampala, Uganda</p>
+        </div>
+        <div class="info-card"
+             style="flex:1 1 250px; background:white; border-radius:16px; padding:2rem; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+          <h3>Email Us</h3>
+          <p>info@whitewateradventures.ug</p>
+        </div>
+        <div class="info-card"
+             style="flex:1 1 250px; background:white; border-radius:16px; padding:2rem; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+          <h3>Call Us</h3>
+          <p>+256 700 123 456</p>
+        </div>
+      </div>
+
+      <!-- Embedded Google Map -->
+      <div
+           style="max-width:900px; margin:0 auto; border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.15);">
+        <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.123456789!2d32.611111!3d0.321111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbf123456789%3A0xabcdef123456!2sNakawa%2C%20Kampala!5e0!3m2!1sen!2sug!4v1692123456789!5m2!1sen!2sug"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta" role="region" aria-label="Call to Action">
+      <h3>Ready for Your Adventure?</h3>
+      <p>Book your trip today and experience the thrill of Whitewater Adventures!</p>
+      <a href="trips.html" class="btn">Book Now</a>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Whitewater Adventures | Nakawa, Kampala, Uganda</p>
+      <p>&copy; 2025 Whitewater Adventures. All rights reserved.</p>
     </footer>
+
   </body>
 
 </html>

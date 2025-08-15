@@ -4,253 +4,134 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Us - Oeric Rafting Adventures</title>
+    <title>Trips - Oeric Rafting Adventures</title>
 
-    <!-- Combined CSS -->
+    <!-- Base Site Styles -->
     <link rel="stylesheet" href="styles/styles.css" />
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="styles/trips.css" />
 
-    <style>
-      /* ===== General Styles ===== */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        background-color: #f5f5f5;
-        color: #333;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin-bottom: 0.5em;
-      }
-
-      ul {
-        list-style-type: none;
-      }
-
-      /* ===== Header ===== */
-      header {
-        background-color: #0066cc;
-        color: #fff;
-        padding: 1em;
-      }
-
-      .header-grid {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        gap: 1em;
-      }
-
-      .main-logo {
-        width: 80px;
-      }
-
-      .oeric-logo {
-        width: 50px;
-      }
-
-      .main-nav ul,
-      .week-nav ul {
-        display: flex;
-        gap: 1em;
-      }
-
-      .main-nav a.active {
-        font-weight: bold;
-        text-decoration: underline;
-      }
-
-      /* ===== Main Content ===== */
-      .container {
-        max-width: 1200px;
-        margin: 2em auto;
-        padding: 0 1em;
-      }
-
-      section {
-        margin-bottom: 2em;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease-out;
-      }
-
-      section.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .history img {
-        margin-top: 1em;
-        border-radius: 8px;
-      }
-
-      .adventure-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1em;
-      }
-
-      figure {
-        margin: 0;
-        text-align: center;
-      }
-
-      figcaption {
-        margin-top: 0.5em;
-        font-weight: bold;
-        color: #0066cc;
-      }
-
-      /* ===== Footer ===== */
-      footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 1em;
-      }
-
-      .socials {
-        display: flex;
-        justify-content: center;
-        gap: 1em;
-        margin-top: 0.5em;
-      }
-
-      .socials img {
-        width: 30px;
-        height: 30px;
-      }
-    </style>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <!-- ================= HEADER ================= -->
     <header>
       <div class="header-grid">
-        <!-- Logos -->
+        <!-- Logos: visual branding -->
+        <!-- CSS: .main-logo/.oeric-logo with size and spacing -->
         <img src="images/logo.png" alt="Oeric Rafting Adventures Logo" class="main-logo" />
-        <img src="images/oeric-logo.png" alt="Oeric Logo" class="oeric-logo" />
+        <img src="images/oeric-logo.png" alt="Secondary Oeric Logo" class="oeric-logo" />
 
+        <!-- Site Title -->
+        <!-- CSS: typography, font-size, color -->
         <h1>Oeric Rafting Adventures</h1>
 
         <!-- Main Navigation -->
-        <nav class="main-nav">
+        <!-- CSS: flex layout, hover/focus transitions -->
+        <nav aria-label="Primary navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About Us</a></li>
-            <li><a href="trips.html">Trips</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="trips.html" aria-current="page">Trips</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </nav>
-
-        <!-- Weekly Navigation -->
-        <nav class="week-nav">
-          <ul>
-            <li><a href="#">W1</a></li>
-            <li><a href="#">W2</a></li>
-            <li><a href="#">W3</a></li>
-            <li><a href="#">W4</a></li>
-            <li><a href="#">W5</a></li>
-            <li><a href="#">W6</a></li>
-            <li><a href="#">W7</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
+    <!-- ================= MAIN CONTENT ================= -->
     <main class="container">
-      <section>
-        <h2>About Our Company</h2>
-        <p>
-          Oeric Rafting Adventures is a locally owned rafting company led by <strong>Eric Obonyo</strong>. Located in
-          <strong>Nakawa, Kampala, Uganda</strong>, our goal is to offer thrilling, safe, and memorable experiences
-          on Uganda’s rivers.
-        </p>
-      </section>
+      <!-- Page Heading -->
+      <!-- CSS: typography, padding, responsive container -->
+      <header>
+        <h2>Adventure Awaits: Explore Our Trips</h2>
+      </header>
 
-      <section>
-        <h3>Meet the Team</h3>
-        <ul>
-          <li><strong>Eric Obonyo</strong> – Founder & Lead Guide</li>
-          <li>Eric Okoth – Safety Manager</li>
-          <li>Marion Akello – River Guide</li>
-          <li>Grace Apio – Guest Services</li>
-        </ul>
-      </section>
-
-      <section class="history">
-        <h2>Our History</h2>
-        <p>
-          Founded in 2015, Oeric Rafting Adventures began with a dream of sharing the beauty and thrill of Uganda’s
-          rivers.
-        </p>
-        <img src="images/history.jpg" alt="Historic photo of rafting team" />
-      </section>
-
-      <section class="adventures">
-        <h2>Our Adventures</h2>
-        <div class="adventure-gallery">
-          <figure>
-            <img src="images/los-dientes.jpg" alt="Los Dientes del Diablo rapids" />
-            <figcaption>Los Dientes del Diablo</figcaption>
-          </figure>
-          <figure>
-            <img src="images/big-mallard.jpg" alt="Big Mallard rapid adventure" />
-            <figcaption>Big Mallard</figcaption>
-          </figure>
-          <figure>
-            <img src="images/half-day.jpg" alt="Half Day rafting trip" />
-            <figcaption>Half Day Adventure</figcaption>
-          </figure>
-          <figure>
-            <img src="images/sunset-trip.jpg" alt="Sunset rafting trip" />
-            <figcaption>Sunset Trip</figcaption>
-          </figure>
-          <figure>
-            <img src="images/river-rush.jpg" alt="River Rush whitewater experience" />
-            <figcaption>River Rush</figcaption>
-          </figure>
+      <!-- ================= TRIPS GRID ================= -->
+      <section class="trips-grid" aria-label="Available Trips">
+        <!-- Each trip-card uses:
+           CSS: .trip-card -> shadow, border-radius, padding, fade-in animation
+           Accessibility: tabindex="0" allows keyboard focus
+           Visual: hover effects and smooth transitions
+      -->
+        <div class="trip-card fade-in" tabindex="0"
+             data-title="Mountain Adventure explore scenic mountain trails breathtaking views">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+               alt="Mountain Adventure Trail with panoramic views" loading="lazy">
+          <h3>Mountain Adventure</h3>
+          <p>Explore the scenic mountain trails and enjoy breathtaking views.</p>
         </div>
+
+        <div class="trip-card fade-in" tabindex="0"
+             data-title="River Rafting thrill whitewater rafting expert guides">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
+               alt="Whitewater rafting team paddling through rapids" loading="lazy">
+          <h3>River Rafting</h3>
+          <p>Experience the thrill of whitewater rafting with our expert guides.</p>
+        </div>
+
+        <div class="trip-card fade-in" tabindex="0"
+             data-title="Forest Camp relax serene forest campsite nature">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+               alt="Forest campsite at sunset surrounded by tall trees" loading="lazy">
+          <h3>Forest Camp</h3>
+          <p>Relax in a serene forest campsite surrounded by nature.</p>
+        </div>
+      </section>
+
+      <!-- ================= PRICING TABLE ================= -->
+      <section class="pricing-section">
+        <h2>Trip Pricing Packages</h2>
+        <table class="pricing-table" aria-label="Trip Pricing Packages">
+          <thead>
+            <tr>
+              <th scope="col">Package</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CSS: table styling, borders, spacing -->
+            <tr>
+              <td>Basic Adventure</td>
+              <td>1 Day</td>
+              <td>$150</td>
+            </tr>
+            <tr>
+              <td>Weekend Getaway</td>
+              <td>3 Days</td>
+              <td>$400</td>
+            </tr>
+            <tr>
+              <td>Ultimate Expedition</td>
+              <td>7 Days</td>
+              <td>$900</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ================= CALL TO ACTION ================= -->
+      <section class="cta">
+        <!-- CSS: button styling, hover transitions, padding, responsive width -->
+        <h2>Ready for Your Next Adventure?</h2>
+        <p>Book your trip today and create unforgettable memories!</p>
+        <a href="contact.html" class="btn">Book Now</a>
       </section>
     </main>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
       <p>&copy; 2025 Oeric Rafting Adventures | Nakawa, Kampala, Uganda</p>
       <div class="socials">
-        <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
-        <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
-        <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+        <!-- CSS: icon sizing, hover effects -->
+        <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter" /></a>
       </div>
     </footer>
-
-    <!-- Scroll Animation -->
-    <script>
-      const sections = document.querySelectorAll('section');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      sections.forEach(section => observer.observe(section));
-    </script>
   </body>
 
 </html>

@@ -1,52 +1,140 @@
-nav {
-  background-color: darkblue;
-  padding: 10px;
+/* ===== Reset & Base Styles ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-nav a {
-  color: white;
-  display: block;
-  padding: 20px;
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-h1 {
-  color: darkblue;
-}
-
-img {
-  width: 150px;
-  height: auto;
-  border: 1px solid black;
-  padding: 2px;
-  box-shadow: 0 0 30px gray;
-}
-
-p {
-  padding: 10px;
-}
-nav {
-  background-color: darkblue;
-  padding: 10px;
-}
-
-nav a {
-  color: white;
-  display: block;
-  padding: 20px;
-}
-
-h1 {
-  color: darkblue;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
-  width: 150px;
+  width: 150px; /* preserved from your simple CSS */
   height: auto;
-  border: 1px solid black;
-  padding: 2px;
-  box-shadow: 0 0 30px gray;
+  border: 1px solid black; /* preserved */
+  padding: 2px; /* preserved */
+  box-shadow: 0 0 30px gray; /* preserved */
 }
 
 p {
-  padding: 10px;
+  padding: 10px; /* preserved */
+}
+
+/* ===== Header & Navigation ===== */
+header {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 1em;
+}
+
+nav {
+  background-color: darkblue; /* preserved */
+  padding: 10px; /* preserved */
+}
+
+nav ul {
+  display: flex;
+  gap: 1em;
+  list-style: none;
+}
+
+nav a {
+  color: white; /* preserved */
+  display: block; /* preserved */
+  padding: 20px; /* preserved */
+}
+
+nav a[aria-current="page"] {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3 {
+  margin-bottom: 0.5em;
+  color: darkblue; /* preserved */
+}
+
+/* ===== Layouts ===== */
+.container {
+  max-width: 1200px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.trips-grid,
+.trip-cards,
+.image-grid,
+.adventure-gallery {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.trip-card,
+figure {
+  background: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cta .btn,
+.trip-card .btn,
+.hero .btn {
+  display: inline-block;
+  background-color: darkblue;
+  color: white;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.cta .btn:hover,
+.trip-card .btn:hover,
+.hero .btn:hover {
+  background-color: #004080;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+.socials img {
+  width: 30px;
+  height: 30px;
+}
+
+/* ===== Scroll & Fade Effects ===== */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
