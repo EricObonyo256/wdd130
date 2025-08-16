@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
 }
 
 /* Images */
@@ -61,21 +62,23 @@ nav a {
   color: white;
   display: block;
   padding: 10px 15px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover,
 nav a:focus {
   background-color: #004080;
   border-radius: 5px;
+  outline: none;
 }
 
 /* ==========================
    Header
    ========================== */
 header {
-  background-color: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #e0f0ff 100%);
   padding: 1em 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 header .header-grid {
@@ -125,12 +128,14 @@ footer .socials img {
   padding: 0.75em 1.5em;
   border-radius: 5px;
   font-weight: 600;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover,
 .btn:focus {
   background-color: #004080;
+  transform: translateY(-2px);
+  outline: none;
 }
 
 /* ==========================
@@ -164,12 +169,7 @@ footer .socials img {
 .trip-card:focus {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.trip-card img {
-  width: 100%;
-  height: auto;
-  display: block;
+  outline: none;
 }
 
 .trip-card h3 {
@@ -180,7 +180,9 @@ footer .socials img {
   padding: 0 1em 1em 1em;
 }
 
-/* Pricing Table */
+/* ==========================
+   Pricing Table
+   ========================== */
 .pricing-section {
   margin: 2em 0;
 }
@@ -189,6 +191,7 @@ footer .socials img {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1em;
+  transition: transform 0.3s ease;
 }
 
 .pricing-table th,
@@ -196,6 +199,7 @@ footer .socials img {
   padding: 12px 15px;
   text-align: left;
   border: 1px solid #ccc;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .pricing-table th {
@@ -207,7 +211,15 @@ footer .socials img {
   background-color: #f2f2f2;
 }
 
-/* Image Gallery */
+.pricing-table tbody tr:hover,
+.pricing-table tbody tr:focus-within {
+  background-color: #d9e6f2;
+  cursor: pointer;
+}
+
+/* ==========================
+   Image Gallery
+   ========================== */
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -225,16 +237,28 @@ footer .socials img {
 .image-gallery img:hover,
 .image-gallery img:focus {
   transform: scale(1.05);
+  outline: none;
 }
 
-/* Call to Action (CTA) */
+/* ==========================
+   Call to Action (CTA)
+   ========================== */
 .cta {
-  background-color: darkblue;
+  background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
   color: #fff;
   text-align: center;
   padding: 2em 1em;
   border-radius: 8px;
   margin: 2em 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta:hover,
+.cta:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  outline: none;
 }
 
 .cta h2,
@@ -247,24 +271,5 @@ footer .socials img {
 }
 
 /* ==========================
-   Responsive Adjustments
-   ========================== */
-@media (max-width: 768px) {
-  .trips-grid,
-  .image-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav a {
-    padding: 10px 0;
-  }
-
-  header .header-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
+   Fade-in Animation
+   =============
