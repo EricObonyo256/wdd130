@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - Oeric Rafting Adventures</title>
+    <meta name="description"
+          content="Learn about Oeric Rafting Adventures, our mission, history, team, and thrilling adventures in Uganda.">
+    <meta name="author" content="Eric Obonyo">
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #a0d8f7, #004e89);
+        color: #fff;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        color: #ffcc00;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover,
+      nav ul li a.active {
+        color: #ffea61;
+      }
+
+      /* HEADER */
+      header {
+        background: rgba(0, 78, 137, 0.85);
+        padding: 1rem 2rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      .header-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .header-grid img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        animation: logo-spin 4s linear infinite;
+      }
+
+      @keyframes logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      nav ul li a {
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background-color: #ffcc00;
+        color: #004e89;
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+      }
+
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .hero-overlay h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #ffea61;
+        text-shadow: 2px 2px 6px #000;
+      }
+
+      .hero-overlay article {
+        max-width: 700px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      .hero-overlay article p {
+        font-size: 1.1rem;
+        color: #f0f0f0dd;
+      }
+
+      .hero-overlay .article-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 0.8rem;
+        object-fit: cover;
+        box-shadow: 0 4px 12px #0009;
+      }
+
+      /* MAIN */
+      main.container {
+        max-width: 1200px;
+        margin: 2rem auto 3rem;
+        background: rgba(255 255 255 / 0.15);
+        padding: 2rem 3rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgb(0 0 0 / 0.25);
+        backdrop-filter: blur(6px);
+        animation: fadeSlideIn 1.5s ease forwards;
+      }
+
+      @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      main section {
+        margin-bottom: 2.5rem;
+      }
+
+      main h2,
+      main h3 {
+        color: #ffea61;
+        margin-bottom: 1rem;
+        text-shadow: 1px 1px 2px #0008;
+      }
+
+      main p {
+        font-size: 1.1rem;
+        max-width: 700px;
+        color: #f0f0f0dd;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+
+      strong {
+        color: #fff9c4;
+      }
+
+      ul {
+        list-style-type: square;
+        padding-left: 1.5rem;
+        color: #f0f0f0cc;
+        max-width: 400px;
+        margin-bottom: 1rem;
+      }
+
+      ul li {
+        margin-bottom: 0.6rem;
+        font-weight: 600;
+      }
+
+      .history-content {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .history-content p {
+        flex: 1 1 400px;
+        font-size: 1.1rem;
+        color: #fafafacc;
+      }
+
+      .history-content img {
+        flex: 1 1 300px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgb(0 0 0 / 0.4);
+        max-width: 100%;
+        height: auto;
+        filter: drop-shadow(3px 4px 6px rgba(0, 0, 0, 0.7));
+        transition: transform 0.3s ease;
+      }
+
+      .history-content img:hover {
+        transform: scale(1.05) rotate(1.5deg);
+      }
+
+      /* Adventure Gallery */
+      .adventure-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .adventure-gallery figure {
+        background: rgba(255 255 255 / 0.2);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgb(0 0 0 / 0.3);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .adventure-gallery figure:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 30px rgb(0 0 0 / 0.6);
+      }
+
+      .adventure-gallery img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .adventure-gallery figcaption {
+        text-align: center;
+        padding: 0.75rem 0;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #ffea61;
+        text-shadow: 0 1px 4px #000a;
+      }
+
+      /* FOOTER */
+      footer {
+        background: rgba(0, 78, 137, 0.85);
+        color: #ffea61;
+        text-align: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.5);
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        user-select: none;
+      }
+
+      footer p {
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-shadow: 1px 1px 2px #002744;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      .socials a img {
+        width: 28px;
+        height: 28px;
+        filter: drop-shadow(0 1px 1px #0009);
+        transition: filter 0.3s ease;
+      }
+
+      .socials a:hover img {
+        filter: drop-shadow(0 0 8px #ffea61);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-grid {
+          grid-template-columns: 1fr auto;
+          justify-items: center;
+          gap: 0.8rem;
+        }
+
+        header h1 {
+          font-size: 1.5rem;
+          text-align: center;
+          grid-column: 1 / -1;
+        }
+
+        nav ul {
+          gap: 1rem;
+          font-size: 0.9rem;
+        }
+
+        .history-content {
+          flex-direction: column;
+        }
+
+        .history-content img,
+        .history-content p {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="header-grid">
+        <img src="images/logo.png" alt="Oeric Rafting Adventures Logo" />
+        <h1>Oeric Rafting Adventures</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="trips.html">Trips</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <img src="images/about-hero.jpg" alt="Rafting adventure hero image">
+      <div class="hero-overlay">
+        <h1>About Oeric Rafting Adventures</h1>
+        <article>
+          <img src="images/happy-client.jpg" alt="Happy rafting client" class="article-img">
+          <p>Our mission is to provide thrilling and safe rafting experiences while fostering a love for nature. Join us
+            to create unforgettable memories with family and friends!</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= MAIN ================= -->
+    <main class="container" role="main">
+      <section>
+        <h2>About Our Company</h2>
+        <p>
+          Oeric Rafting Adventures is a locally owned rafting company led by <strong>Eric Obonyo</strong>. Located in
+          <strong>Nakawa, Kampala, Uganda</strong>, we combine passion, safety, and sustainability to bring you the best
+          river adventures.
+        </p>
+      </section>
+
+      <section>
+        <h3>Meet the Team</h3>
+        <ul>
+          <li><strong>Eric Obonyo</strong> – Founder & Lead Guide</li>
+          <li>Eric Okoth – Safety Manager</li>
+          <li>Athiyo Ronald – River Guide</li>
+          <li>Pamela Mutia – Guest Services</li>
+        </ul>
+      </section>
+
+      <section class="history" aria-label="Our History">
+        <h2>Our History</h2>
+        <div class="history-content">
+          <p>
+            Founded in 2015, Oeric Rafting Adventures began with a dream of sharing the beauty and thrill of Uganda’s
+            rivers. Starting with just one raft and a lot of passion, we have grown into one of the most trusted rafting
+            companies in East Africa.
+          </p>
+          <img src="images/history.jpg" alt="Historic photo of Oeric Rafting Adventures rafting team" loading="lazy" />
+        </div>
+      </section>
+
+      <section class="adventures" aria-label="Our Adventures">
+        <h2>Our Adventures</h2>
+        <div class="adventure-gallery">
+          <figure>
+            <img src="images/rafting1.jpg" alt="Los Dientes del Diablo rapids" loading="lazy" />
+            <figcaption>Los Dientes del Diablo</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rafting2.jpg" alt="Big Mallard rapid adventure" loading="lazy" />
+            <figcaption>Big Mallard</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rafting3.jpg" alt="Half Day rafting trip" loading="lazy" />
+            <figcaption>Half Day Adventure</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rafting4.jpg" alt="Sunset rafting trip" loading="lazy" />
+            <figcaption>Sunset Trip</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rafting5.jpg" alt="River Rush whitewater experience" loading="lazy" />
+            <figcaption>River Rush</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rafting6.jpg" alt="Evenig Scene whitewater experience" loading="lazy" />
+            <figcaption>Evening Scene</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rafting7.jpg" alt="River Rush whitewater experience" loading="lazy" />
+            <figcaption>River Rush</figcaption>
+          </figure>
+          <figure>
+            <img src="images/rafting8.jpg" alt="River Rush whitewater experience" loading="lazy" />
+            <figcaption>River Rush</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <p>&copy; 2025 Oeric Rafting Adventures | Nakawa, Kampala, Uganda</p>
+      <div class="socials" aria-label="Social media links">
+        <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter" /></a>
+      </div>
+    </footer>
+  </body>
+
+</html>

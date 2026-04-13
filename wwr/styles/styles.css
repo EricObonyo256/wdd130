@@ -1,0 +1,232 @@
+/* ==========================
+   CSS Variables & Base Styles
+   ========================== */
+:root {
+  --primary-color: #0077b6;
+  --accent1-color: #00b4d8;
+  --accent2-color: #023e8a;
+  --body-font: 'Poppins', sans-serif;
+  --heading-font: 'Pacifico', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--accent2-color);
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+/* ==========================
+   Header
+   ========================== */
+header {
+  width: 840px;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.header-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-grid img.main-logo {
+  width: 120px;
+  height: auto;
+}
+
+.header-grid img.oeric-logo {
+  width: 60px;
+  height: auto;
+}
+
+header h1 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--accent2-color);
+  font-weight: 600;
+}
+
+nav ul li a[aria-current="page"] {
+  color: var(--primary-color);
+}
+
+/* ==========================
+   Hero Section
+   ========================== */
+.hero {
+  position: relative;
+  margin: 16px 0;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay for text contrast */
+  color: #fff;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.hero-overlay article {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-overlay article img.article-img {
+  float: right;
+  width: 125px;
+  margin-left: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================
+   Sections
+   ========================== */
+section {
+  margin: 32px 16px;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+/* ==========================
+   Adventure Gallery
+   ========================== */
+.adventure-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.adventure-gallery figure {
+  margin: 0;
+}
+
+.adventure-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent2-color);
+}
+
+/* ==========================
+   Footer
+   ========================== */
+footer {
+  width: 840px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 16px 0;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+footer .socials a img {
+  width: 32px;
+  height: auto;
+}
+
+.socialmedia a {
+  text-decoration: none;
+}
+
+/* ==========================
+   Responsive Design
+   ========================== */
+@media (max-width: 900px) {
+  .header-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-overlay article {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-overlay article img.article-img {
+    float: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,193 @@
+/* ================== CSS Variables ================== */
+:root {
+  --primary-color: #0077b6;
+  --accent1-color: #f1f1f1;
+  --accent2-color: #ffffff;
+  --highlight-color: #ffcc00;
+  --highlight-light: #ffea61;
+  --body-font: 'Poppins', sans-serif;
+  --heading-font: 'Pacifico', cursive;
+}
+
+/* ================== Reset ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================== Body & Typography ================== */
+body {
+  font-family: var(--body-font);
+  color: var(--accent1-color);
+  background: linear-gradient(135deg, #a0d8f7, #004e89);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font);
+  color: var(--highlight-light);
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--highlight-color);
+  transition: color 0.3s ease;
+}
+
+a:hover,
+nav ul li a.active {
+  color: var(--highlight-light);
+}
+
+/* ================== Header ================== */
+header {
+  background-color: rgba(0, 78, 137, 0.85);
+  color: var(--accent2-color);
+  padding: 16px 24px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+header img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  animation: logo-spin 6s linear infinite;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  font-weight: 600;
+}
+
+header nav a {
+  color: var(--accent2-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+header nav a:hover,
+header nav a.active {
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+}
+
+/* ================== Hero ================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.hero-overlay h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--highlight-light);
+}
+
+/* ================== Footer ================== */
+footer {
+  text-align: center;
+  padding: 16px;
+  background-color: rgba(0, 78, 137, 0.85);
+  color: var(--highlight-light);
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.5);
+  margin-top: auto;
+}
+
+footer p {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 8px;
+}
+
+.socials img {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 1px 1px #0009);
+  transition: filter 0.3s ease;
+}
+
+.socials a:hover img {
+  filter: drop-shadow(0 0 8px var(--highlight-light));
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 768px) {
+  .header-grid {
+    grid-template-columns: 1fr auto;
+    justify-items: center;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
