@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About GreenGrow — local fertilizer blends, agronomy advice and reliable ordering for Uganda's growers.">
+  <meta name="theme-color" content="#1f7a5a">
   <title>GreenGrow | About</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="../images/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <script defer src="../scripts/app.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="page-header">
     <div class="container header-inner">
       <div>
@@ -15,15 +20,21 @@
         <h1>Helping farms thrive with balanced, dependable nutrition.</h1>
         <p class="hero-copy">GreenGrow Fertilizers pairs modern agronomy with local experience to deliver products and guidance that support healthier soil and stronger harvests.</p>
       </div>
-      <nav class="primary-nav" aria-label="Site navigation">
-        <a href="index.html">Home</a>
-        <a href="index.html#products">Products</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+      <div style="display:flex;gap:1rem;align-items:center;justify-content:flex-end;">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="sr-only">Menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Site navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#products">Products</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main class="container">
+  <main id="main" class="container" role="main">
     <section class="section-panel">
       <div class="section-row">
         <div>
@@ -36,7 +47,10 @@
           </ul>
         </div>
         <div class="section-media">
-          <img src="images/Alex1.png" alt="GreenGrow fertilizer on a farm" loading="lazy">
+          <picture>
+            <source srcset="../images/Alex1.png" type="image/png">
+            <img src="../images/Alex1.png" alt="GreenGrow fertilizer on a farm" loading="lazy">
+          </picture>
         </div>
       </div>
     </section>
