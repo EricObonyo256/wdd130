@@ -1,3 +1,5 @@
 {
-    "recommendations": []
+    "recommendations": [
+        "ms-mssql.data-workspace-vscode"
+    ]
 }
