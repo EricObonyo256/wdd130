@@ -14,12 +14,40 @@ function require_admin() {
 }
 
 function attempt_login($user, $pass) {
-  $envUser = getenv('SITE_ADMIN_USER') ?: 'admin';
-  $envPass = getenv('SITE_ADMIN_PASS') ?: 'changeme';
-  if ($user === $envUser && $pass === $envPass) {
-    $_SESSION['is_admin'] = true;
-    return true;
+  // First try environment variables (legacy/simple)
+  $envUser = getenv('SITE_ADMIN_USER') ?: null;
+  $envPass = getenv('SITE_ADMIN_PASS') ?: null;
+  if ($envUser && $envPass) {
+    if ($user === $envUser && $pass === $envPass) {
+      $_SESSION['is_admin'] = true;
+      return true;
+    }
   }
+
+  // Next, try database users table if available
+  try {
+    if (file_exists(__DIR__ . '/connect.php')) {
+      require_once __DIR__ . '/connect.php';
+      $stmt = $conn->prepare('SELECT password_hash FROM users WHERE username = ? LIMIT 1');
+      if ($stmt) {
+        $stmt->bind_param('s', $user);
+        $stmt->execute();
+        $stmt->bind_result($hash);
+        if ($stmt->fetch()) {
+          $stmt->close();
+          if (password_verify($pass, $hash)) {
+            $_SESSION['is_admin'] = true;
+            return true;
+          }
+        } else {
+          $stmt->close();
+        }
+      }
+    }
+  } catch (Throwable $e) {
+    // ignore DB errors and fall back
+  }
+
   return false;
 }
 

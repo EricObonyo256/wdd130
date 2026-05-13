@@ -31,6 +31,14 @@ CREATE TABLE IF NOT EXISTS contacts (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(80) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  display_name VARCHAR(150) DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO products (name, description, price, image_path) VALUES
 ('NPK 20:10:10', 'Balanced nutrition for sustained growth and strong plant development.', 24000, 'images/Alex1.png'),
 ('Organic Fertilizer', 'Improves soil health naturally while boosting yield quality.', 18000, 'images/Alex1.png'),

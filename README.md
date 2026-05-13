@@ -28,5 +28,26 @@ php tests/send_contact_test.php http://localhost:8000/contact_process.php
 
 Security note: The simple admin auth uses environment variables; do not use default credentials in production. Consider integrating a proper user system for multi-admin support.
 
+Additional setup and CI
+
+- To use SMTP email notifications, install dependencies and set SMTP env vars:
+
+```powershell
+composer install
+set SMTP_HOST=smtp.example.com
+set SMTP_PORT=587
+set SMTP_USER=your-smtp-user
+set SMTP_PASS=your-smtp-pass
+set SITE_EMAIL=info@yourdomain.com
+```
+
+- To create a hashed admin user in the database:
+
+```powershell
+php admin_setup.php admin StrongPasswordHere
+```
+
+- A GitHub Actions workflow (`.github/workflows/ci.yml`) is included to run a simple contact POST test on pushes to `ggr` and PRs targeting `main`.
+
 # wdd130
 https://ericobonyo256.github.io/wdd130

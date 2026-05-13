@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [ ggr ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  php-test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: greengrow
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "mysqladmin ping --silent"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v4
+        with:
+          php-version: '8.1'
+          extensions: mbstring
+      - name: Install Composer deps
+        run: composer install --no-interaction
+      - name: Import database
+        env:
+          MYSQL_PWD: root
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -u root greengrow < database.sql
+      - name: Start PHP built-in server
+        run: php -S 127.0.0.1:8000 -t . > /dev/null 2>&1 &
+      - name: Run contact test
+        run: php tests/send_contact_test.php http://127.0.0.1:8000/contact_process.php
