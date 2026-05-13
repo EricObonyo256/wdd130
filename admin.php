@@ -1,6 +1,11 @@
 <?php
 include 'connect.php';
 include 'functions.php';
+$
+// require admin
+require_once 'auth.php';
+require_admin();
+
 $pageTitle = 'GreenGrow Fertilizers | Admin';
 
 $message = '';
