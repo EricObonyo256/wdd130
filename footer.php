@@ -1,3 +1,8 @@
+<?php
+if (function_exists('render_footer')) {
+  render_footer();
+} else {
+  ?>
   </main>
 
   <footer>
@@ -7,3 +12,5 @@
   </footer>
 </body>
 </html>
+  <?php
+}
