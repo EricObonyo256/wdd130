@@ -51,3 +51,18 @@ function send_site_email($to, $subject, $body, $from = null) {
   $headers = 'From: ' . $from . "\r\n" . 'Content-Type: text/plain; charset=utf-8';
   return @mail($to, $subject, $body, $headers);
 }
+
+// Render the site footer. Use this function when including footer markup.
+function render_footer() {
+  echo <<<'HTML'
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 GreenGrow Fertilizers Ltd</p>
+    </div>
+  </footer>
+</body>
+</html>
+HTML;
+}
