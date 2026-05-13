@@ -4,6 +4,10 @@
 /* Small overrides for quicker local tweaks */
 :root {
   --brand-accent: var(--accent);
+  --container-width: 1100px;
+  --btn-bg: #1f7a5a;
+  --btn-fg: #fff;
+  --btn-radius: 10px;
 }
 
 /* Ensure full-bleed hero images behave in older browsers */
@@ -62,6 +66,18 @@
 h1, h2, h3 {
   line-height: 1.12;
 }
+
+/* Global container and utilities */
+.container { max-width: var(--container-width); margin:0 auto; padding:0 1rem; }
+.lead { color: #29443a; font-size:1.05rem; }
+
+/* Buttons */
+.btn { display:inline-block; background:var(--btn-bg); color:var(--btn-fg); padding:0.6rem 1rem; border-radius:var(--btn-radius); text-decoration:none; font-weight:700; border:none; cursor:pointer; }
+.btn:hover { opacity:0.94; }
+.btn-secondary { background:transparent; color:var(--btn-bg); border:1px solid rgba(31,122,90,0.12); }
+
+/* Small helpers */
+.sr-only { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 
 /* Footer: small layout polish */
 footer {

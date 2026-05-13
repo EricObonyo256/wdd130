@@ -34,10 +34,23 @@ if (isset($_GET['delete_product'])) {
   exit;
 }
 
+if (isset($_GET['delete_contact'])) {
+  $deleteId = (int) $_GET['delete_contact'];
+  $stmt = $conn->prepare('DELETE FROM contacts WHERE id = ?');
+  $stmt->bind_param('i', $deleteId);
+  $stmt->execute();
+  $stmt->close();
+  header('Location: admin.php');
+  exit;
+}
+
 $productResult = $conn->query('SELECT * FROM products ORDER BY created_at DESC');
 $products = $productResult ? $productResult->fetch_all(MYSQLI_ASSOC) : [];
 $orderResult = $conn->query('SELECT * FROM orders ORDER BY created_at DESC LIMIT 50');
 $orders = $orderResult ? $orderResult->fetch_all(MYSQLI_ASSOC) : [];
+// recent contact messages
+$contactResult = $conn->query('SELECT * FROM contacts ORDER BY created_at DESC LIMIT 100');
+$contacts = $contactResult ? $contactResult->fetch_all(MYSQLI_ASSOC) : [];
 
 include 'header.php';
 ?>
@@ -104,6 +117,42 @@ include 'header.php';
 
 <section class="section-panel">
   <div class="section-heading">
+    <span class="eyebrow">Contact messages</span>
+    <h2>Messages from the contact form</h2>
+  </div>
+
+  <?php if (count($contacts) === 0): ?>
+    <p>No contact messages yet.</p>
+  <?php else: ?>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($contacts as $c): ?>
+          <tr>
+            <td><?php echo esc($c['created_at']); ?></td>
+            <td><?php echo esc($c['name']); ?></td>
+            <td><?php echo esc($c['phone']); ?></td>
+            <td><?php echo esc($c['email']); ?></td>
+            <td><?php echo esc(substr($c['message'], 0, 200)); ?></td>
+            <td><a class="link-button" href="admin.php?delete_contact=<?php echo $c['id']; ?>" onclick="return confirm('Delete this message?')">Delete</a></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  <?php endif; ?>
+</section>
+
+<section class="section-panel">
+  <div class="section-heading">
     <span class="eyebrow">Latest orders</span>
     <h2>Customer requests</h2>
   </div>
@@ -141,4 +190,5 @@ include 'header.php';
 </section>
 
 <?php include 'footer.php'; ?>
+ 
  
