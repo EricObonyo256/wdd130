@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="GreenGrow logo">
+  <rect width="64" height="64" rx="12" fill="#1f7a5a"/>
+  <g fill="#fff" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="28" text-anchor="middle">
+    <text x="50%" y="55%" dy="-2">GG</text>
+  </g>
+</svg>

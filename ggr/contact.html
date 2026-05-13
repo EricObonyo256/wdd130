@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Contact GreenGrow for orders, pricing, and fertilizer support — phone, email, or WhatsApp.">
+    <meta name="theme-color" content="#1f7a5a">
+    <title>GreenGrow Fertilizers | Contact</title>
+    <link rel="icon" href="../images/favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script defer src="../scripts/app.js"></script>
+    <style>
+      .hero {
+        background: linear-gradient(180deg, #eaf6f0 0%, #ffffff 60%);
+        padding-bottom: 1rem;
+      }
+
+      .hero-inner {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        padding: 2.5rem 0;
+      }
+
+      .hero-copy {
+        flex: 1;
+      }
+
+      .hero-media {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-media img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(8, 38, 25, 0.08);
+      }
+
+      .hero-wave {
+        display: block;
+        width: 100%;
+        height: 60px;
+        margin-top: -1px;
+      }
+
+      .card-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin-top: 1rem;
+      }
+
+      .contact-card {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(17, 43, 53, 0.06);
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .contact-card .icon {
+        font-size: 1.6rem;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1f7a5a, #2aa77a);
+        color: #fff;
+        border-radius: 8px;
+      }
+
+      .contact-form {
+        max-width: 740px;
+      }
+
+      .form-row {
+        margin-bottom: 0.75rem;
+      }
+
+      .form-row label {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+      }
+
+      .form-row input,
+      .form-row textarea {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        border: 1px solid #e6eef0;
+        border-radius: 8px;
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 0.5rem;
+      }
+
+      .form-status {
+        color: #155724;
+        font-weight: 600;
+      }
+
+      @media (max-width:880px) {
+        .hero-inner {
+          flex-direction: column-reverse;
+        }
+
+        .hero-media img {
+          max-width: 320px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div>
+          <h1>Contact GreenGrow</h1>
+          <p>Get quick product support, order guidance, and delivery information.</p>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:center;justify-content:flex-end;">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true">☰</span>
+          </button>
+          <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="home.html">About</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="container" role="main">
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Reach us</p>
+            <h1>Fast, reliable fertilizer support for your farm</h1>
+            <p class="lead">Order guidance, pricing, and delivery info — tailored recommendations from our agronomy
+              team.</p>
+            <p class="hero-ctas">
+              <a class="btn"
+                 href="https://wa.me/256772722688?text=Hello%20GreenGrow,%20I%20need%20fertilizer%20support">Chat on
+                WhatsApp</a>
+              <a class="btn btn-secondary" href="#contact-form">Send a message</a>
+            </p>
+          </div>
+          <div class="hero-media" aria-hidden="true">
+            <img src="../images/hero-image.png" alt="GreenGrow products and crops" loading="lazy">
+          </div>
+        </div>
+        <svg class="hero-wave" viewBox="0 0 1200 100" preserveAspectRatio="none">
+          <path d="M0,30 C300,100 900,0 1200,60 L1200,100 L0,100 Z" fill="#ffffff" />
+        </svg>
+      </section>
+
+      <section class="section-panel contacts">
+        <div class="section-heading">
+          <h2>We are here to support your fertilizer order</h2>
+          <p>Choose the channel that works best — phone, email, or WhatsApp.</p>
+        </div>
+        <div class="card-grid">
+          <article class="contact-card">
+            <div class="icon" aria-hidden="true">📞</div>
+            <h3>Phone</h3>
+            <p><a href="tel:+256772722688">+256 772 722 688</a></p>
+          </article>
+          <article class="contact-card">
+            <div class="icon" aria-hidden="true">✉️</div>
+            <h3>Email</h3>
+            <p><a href="mailto:info@greengrowfertilizers.com">info@greengrowfertilizers.com</a></p>
+          </article>
+          <article class="contact-card">
+            <div class="icon" aria-hidden="true">📍</div>
+            <h3>Location</h3>
+            <p>Kampala, Uganda</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-panel" id="contact-form">
+        <h2>Send us a quick message</h2>
+        <p>Fill out the form below and our team will get back to you with product details and delivery timelines.</p>
+        <form action="../contact_process.php" method="post" class="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+256 772 722 688" pattern="^\+?\d{7,15}$" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your order or question"
+                      required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Send message</button>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </section>
+
+      <section class="contact-strip">
+        <div>
+          <h2>Prefer WhatsApp?</h2>
+          <p>Send a direct message for instant order support and pricing.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-link" href="tel:+256772722688">Call now</a>
+          <a class="btn"
+             href="https://wa.me/256772722688?text=Hello%20GreenGrow,%20I%20need%20fertilizer%20support">Chat on
+            WhatsApp</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2026 GreenGrow Fertilizers Ltd</p>
+      </div>
+    </footer>
+  </body>
+
+</html>

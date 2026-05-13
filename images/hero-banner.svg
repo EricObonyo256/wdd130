@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="h" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#eaf6f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#h)" />
+  <g transform="translate(60,50)">
+    <circle cx="80" cy="120" r="60" fill="#1f7a5a" opacity="0.12"/>
+    <rect x="160" y="40" width="320" height="240" rx="14" fill="#fff" stroke="#e6eef0"/>
+    <text x="180" y="110" font-size="28" fill="#1f7a5a">Premium blends for healthy soil</text>
+    <text x="180" y="150" font-size="16" fill="#29443a">Balanced nutrition to boost yield and crop quality.</text>
+  </g>
+</svg>

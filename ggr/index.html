@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GreenGrow Fertilizers — premium nutrients and local agronomy support for healthier soil and higher yields.">
+  <meta name="theme-color" content="#1f7a5a">
+  <title>GreenGrow Fertilizers | Home</title>
+  <link rel="icon" href="../images/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <script defer src="../scripts/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>GreenGrow Fertilizers</h1>
+        <p>Premium nutrients for healthier soil and stronger harvests.</p>
+      </div>
+      <div style="display:flex;gap:1rem;align-items:center;justify-content:flex-end;">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="sr-only">Menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="#hero">Home</a>
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section id="hero" class="hero-panel">
+      <div class="hero-copy">
+        <span class="eyebrow">Grow with confidence</span>
+        <h2>Stronger soil, higher yields, and healthier crops.</h2>
+        <p class="lead">GreenGrow blends expert agronomy with dependable fertilizer supply so farmers can achieve more reliable harvests.</p>
+        <div class="button-group">
+          <a class="btn" href="https://wa.me/256772722688?text=Hello%20GreenGrow,%20I%20want%20to%20place%20an%20order">Order on WhatsApp</a>
+          <a class="btn-secondary" href="#products">View products</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <picture>
+          <source srcset="../images/Alex1.png" type="image/png">
+          <img src="../images/Alex1.png" alt="GreenGrow fertilizer packaging and healthy crops" loading="lazy">
+        </picture>
+      </div>
+    </section>
+
+    <section id="products" class="section-panel">
+      <div class="section-heading">
+        <span class="eyebrow">Our product range</span>
+        <h2>Fertilizer blends for every stage of growth</h2>
+      </div>
+      <div class="card-grid">
+        <article class="product-card">
+          <h3>NPK 20:10:10</h3>
+          <p>Balanced nutrition for sustained growth and strong plant development.</p>
+          <button type="button" onclick="orderProduct('NPK 20:10:10')">Order now</button>
+        </article>
+        <article class="product-card">
+          <h3>Organic Fertilizer</h3>
+          <p>Improves soil health naturally while boosting yield quality.</p>
+          <button type="button" onclick="orderProduct('Organic Fertilizer')">Order now</button>
+        </article>
+        <article class="product-card">
+          <h3>Liquid Fertilizer</h3>
+          <p>Fast nutrient uptake for quicker crop recovery and stronger leaves.</p>
+          <button type="button" onclick="orderProduct('Liquid Fertilizer')">Order now</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section-panel">
+      <div class="section-heading">
+        <span class="eyebrow">About GreenGrow</span>
+        <h2>Local fertilizer expertise designed to help farms thrive.</h2>
+      </div>
+      <div class="grid-two">
+        <div>
+          <p>GreenGrow delivers reliable fertilizer products, practical guidance, and local support to help farmers make the most of every season.</p>
+          <ul class="feature-list">
+            <li>Trusted formulas for healthier growth.</li>
+            <li>Quick ordering via WhatsApp with fast delivery.</li>
+            <li>Simple guidance for fertilizer use and soil care.</li>
+          </ul>
+        </div>
+        <div class="feature-aside">
+          <img src="images/Alex1.png" alt="Fertilizer bag beside healthy crops">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-strip">
+      <div>
+        <h2>Ready to grow with GreenGrow?</h2>
+        <p>Message our team today for product recommendations, delivery details, and order support.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="contact-link" href="tel:+256772722688">+256 772 722 688</a>
+        <a class="btn" href="https://wa.me/256772722688?text=Hello%20GreenGrow">Chat on WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 GreenGrow Fertilizers Ltd</p>
+    </div>
+  </footer>
+
+  <script>
+    function orderProduct(product) {
+      const message = `Hello GreenGrow, I would like to order: ${product}`;
+      window.open('https://wa.me/256772722688?text=' + encodeURIComponent(message), '_blank');
+    }
+  </script>
+</body>
+</html>

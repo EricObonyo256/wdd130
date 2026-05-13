@@ -1,0 +1,87 @@
+/* Main stylesheet entry — imports the polished design in Original/ */
+@import url('Original/styles.css');
+
+/* Small overrides for quicker local tweaks */
+:root {
+  --brand-accent: var(--accent);
+  --container-width: 1100px;
+  --btn-bg: #1f7a5a;
+  --btn-fg: #fff;
+  --btn-radius: 10px;
+}
+
+/* Ensure full-bleed hero images behave in older browsers */
+.hero-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Accessibility: visible skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+/* Responsive nav toggle */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 8px;
+    padding: 0.4rem;
+    border: 1px solid rgba(17,43,53,0.06);
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .menu-toggle[aria-expanded="true"] {
+    background: rgba(31,122,90,0.08);
+  }
+}
+
+/* Slight typographic polish */
+h1, h2, h3 {
+  line-height: 1.12;
+}
+
+/* Global container and utilities */
+.container { max-width: var(--container-width); margin:0 auto; padding:0 1rem; }
+.lead { color: #29443a; font-size:1.05rem; }
+
+/* Buttons */
+.btn { display:inline-block; background:var(--btn-bg); color:var(--btn-fg); padding:0.6rem 1rem; border-radius:var(--btn-radius); text-decoration:none; font-weight:700; border:none; cursor:pointer; }
+.btn:hover { opacity:0.94; }
+.btn-secondary { background:transparent; color:var(--btn-bg); border:1px solid rgba(31,122,90,0.12); }
+
+/* Small helpers */
+.sr-only { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+/* Footer: small layout polish */
+footer {
+  background: transparent;
+  padding-top: 3rem;
+}
+
